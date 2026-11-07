@@ -285,3 +285,6 @@ No real customer or seller personal information is required. The generated recor
 The project successfully generated the full-scale synthetic dataset, completed data validation, covered five required exception scenarios, passed all 10 automated tests, and demonstrated reproducibility across two full-scale runs.
 
 It provides a foundation for monitoring seller operations, validating payout calculations, and identifying business exceptions.
+## Test Results
+
+For detailed test execution results, data validation, and reproducibility details, see the [Test Execution Report](test-results/test_execution_report.md).
