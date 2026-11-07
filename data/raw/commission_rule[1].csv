@@ -1,6 +1,0 @@
-commission_rule_id,category,commission_rate_pct,reserve_rate_pct,effective_from,effective_to,is_active
-CR-ELECTRONICS,Electronics,10,5.00,2025-01-01,2027-12-31,true
-CR-HOME,Home,12,5.00,2025-01-01,2027-12-31,true
-CR-FASHION,Fashion,15,5.00,2025-01-01,2027-12-31,true
-CR-BOOKS,Books,8,5.00,2025-01-01,2027-12-31,true
-CR-BEAUTY,Beauty,13,5.00,2025-01-01,2027-12-31,true
