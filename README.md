@@ -266,90 +266,85 @@ Execute the test suite:
 python -m pytest tests/ -v
 The tests cover basic data validation and known operational exception scenarios.
 
-15. Validation Results
-The starter dataset generation completed successfully.
+## 15. Full-Scale Validation Results
 
-========== GENERATION COMPLETE ==========
+The full-scale synthetic dataset was generated successfully and passed validation.
 
-Validation: PASS
-Seed: 20261022
-Scale: 0.01
+**Generation Configuration**
+- Seed: `20261022`
+- Scale: `1.0`
+- As-of Date: `2026-11-07`
+- Validation Status: PASS
+- Validation Errors: 0
 
-Row Counts:
-seller: 20
-product_listing: 200
-commission_rule: 5
-order: 1000
-order_line: 2492
-fulfillment: 2492
-customer_review: 767
-dispute: 100
-payout: 12
-payout_line: 2447
-event_history: 5081
-seller_metrics: 20
-exception_cases: 5
-The starter dataset passed the generator validation checks.
+**Generated Row Counts**
 
-Full-scale generation and reproducibility checks require final verification.
+| Entity | Records |
+|---|---:|
+| Seller | 2,000 |
+| Product Listing | 20,000 |
+| Commission Rule | 5 |
+| Order | 100,000 |
+| Order Line | 250,217 |
+| Fulfillment | 250,217 |
+| Customer Review | 74,828 |
+| Dispute | 10,000 |
+| Payout | 1,327 |
+| Payout Line | 246,154 |
+| Event History | 510,115 |
+| Seller Metrics | 2,000 |
+| Exception Cases | 5 |
 
-16. Documentation
+**Testing Results**
+- Generator syntax check: PASS
+- Full-scale data validation: PASS
+- Automated tests: 10 passed
+- Reproducibility test: 37 out of 37 files matched across two runs.
+
+## 16. Documentation
+
 Additional project documentation is available in:
 
-docs/data_dictionary.md – Entity and field definitions.
+- `docs/data_dictionary.md` – Entity and field definitions.
+- `data/README_generated.md` – Generated dataset information.
+- `data/source_manifest.json` – Dataset source and configuration information.
+- `data/validation_summary.json` – Data validation summary.
 
-data/README_generated.md – Generated dataset information.
+## 17. Reproducibility
 
-data/source_manifest.json – Dataset source and configuration information.
+The project uses a fixed random seed (`20261022`) and a configurable scale parameter to generate reproducible synthetic datasets.
 
-data/validation_summary.json – Data validation summary.
+Two full-scale generation runs were compared using SHA-256 checksums.
 
-17. Reproducibility
-The project uses a fixed random seed and configurable scale parameter to support reproducible synthetic datasets.
+**Result:** All 37 generated files matched exactly, confirming reproducibility.
 
-The generated outputs can be compared across runs to verify consistency.
+## 18. Future Enhancements
 
-18. Future Enhancements
-Expand full-scale data generation and performance optimization.
+- Develop interactive dashboards.
+- Add advanced seller performance analytics.
+- Improve payout reconciliation reports.
+- Integrate automated anomaly monitoring.
+- Expand exception monitoring and reporting capabilities.
 
-Add more comprehensive automated validation tests.
+## 19. Project Outcome
 
-Improve payout reconciliation reports.
-
-Add advanced seller performance analytics.
-
-Develop interactive dashboards.
-
-Integrate automated anomaly monitoring.
-
-Improve documentation and test coverage.
-
-19. Project Outcome
 This project demonstrates practical implementation of:
 
-Python programming.
+- Python programming.
+- Data engineering workflows.
+- Synthetic data generation.
+- Relational database management.
+- SQL and SQLite.
+- Data validation and quality checks.
+- Business rule implementation.
+- Operational exception monitoring.
+- Automated testing.
+- Git and GitHub version control.
 
-Data engineering workflows.
+## 20. Author
 
-Synthetic data generation.
+**Project:** Seller Operations & Payout Monitoring System
 
-Relational database management.
+**Category:** Data Engineering
 
-SQL and SQLite.
-
-Data validation and quality checks.
-
-Business rule implementation.
-
-Operational exception monitoring.
-
-Automated testing.
-
-Git and GitHub version control.
-
-20. Author
-Project: Seller Operations & Payout Monitoring System
-
-Category: Data Engineering
-
-Technologies: Python, SQL, SQLite, Pandas, Pytest, Git, and GitHub
+**Technologies:** Python, SQL, SQLite, Pandas, Pytest, Git, and GitHub.
