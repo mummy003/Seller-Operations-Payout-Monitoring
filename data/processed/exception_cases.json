@@ -1,0 +1,42 @@
+[
+  {
+    "case_id": "EX-001",
+    "issue_type": "PAYOUT_BEFORE_DELIVERY_OR_HOLD_RELEASE",
+    "ground_truth": "REJECT_PAYOUT",
+    "expected_decision": "Do not pay until delivered and 7-day hold has elapsed",
+    "affected_entity": "Fulfillment/PayoutLine",
+    "affected_record_id": "SYNTHETIC_FIXTURE"
+  },
+  {
+    "case_id": "EX-002",
+    "issue_type": "COMMISSION_APPLIED_TWICE",
+    "ground_truth": "FLAG_DUPLICATE_COMMISSION",
+    "expected_decision": "Apply one effective commission rule once per order line",
+    "affected_entity": "PayoutLine",
+    "affected_record_id": "SYNTHETIC_FIXTURE"
+  },
+  {
+    "case_id": "EX-003",
+    "issue_type": "SUSPENDED_SELLER_CONTINUES_LISTING",
+    "ground_truth": "SUSPEND_LISTING",
+    "expected_decision": "Suspended seller must not have an active listing",
+    "affected_entity": "Seller/ProductListing",
+    "affected_record_id": "NONE"
+  },
+  {
+    "case_id": "EX-004",
+    "issue_type": "DISPUTE_NOT_DEDUCTED",
+    "ground_truth": "HOLD_OR_DEDUCT_DISPUTE",
+    "expected_decision": "Open/lost disputes must be held or deducted according to policy",
+    "affected_entity": "Dispute/PayoutLine",
+    "affected_record_id": "SYNTHETIC_FIXTURE"
+  },
+  {
+    "case_id": "EX-005",
+    "issue_type": "PAYOUT_TOTAL_NOT_EQUAL_TO_LINES",
+    "ground_truth": "RECONCILE_PAYOUT",
+    "expected_decision": "Payout header must equal sum of its payout lines",
+    "affected_entity": "Payout",
+    "affected_record_id": "SYNTHETIC_FIXTURE"
+  }
+]

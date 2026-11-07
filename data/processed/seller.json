@@ -1,0 +1,162 @@
+[
+  {
+    "seller_id": "SELL-000001",
+    "seller_name": "Seller 000001",
+    "seller_status": "ACTIVE",
+    "country": "IN",
+    "created_date": "2025-11-27",
+    "service_level_target_pct": "95.00"
+  },
+  {
+    "seller_id": "SELL-000002",
+    "seller_name": "Seller 000002",
+    "seller_status": "ACTIVE",
+    "country": "IN",
+    "created_date": "2024-12-27",
+    "service_level_target_pct": "95.00"
+  },
+  {
+    "seller_id": "SELL-000003",
+    "seller_name": "Seller 000003",
+    "seller_status": "ACTIVE",
+    "country": "IN",
+    "created_date": "2025-08-16",
+    "service_level_target_pct": "95.00"
+  },
+  {
+    "seller_id": "SELL-000004",
+    "seller_name": "Seller 000004",
+    "seller_status": "ACTIVE",
+    "country": "IN",
+    "created_date": "2024-10-16",
+    "service_level_target_pct": "95.00"
+  },
+  {
+    "seller_id": "SELL-000005",
+    "seller_name": "Seller 000005",
+    "seller_status": "ACTIVE",
+    "country": "IN",
+    "created_date": "2026-05-24",
+    "service_level_target_pct": "95.00"
+  },
+  {
+    "seller_id": "SELL-000006",
+    "seller_name": "Seller 000006",
+    "seller_status": "ACTIVE",
+    "country": "IN",
+    "created_date": "2024-06-25",
+    "service_level_target_pct": "95.00"
+  },
+  {
+    "seller_id": "SELL-000007",
+    "seller_name": "Seller 000007",
+    "seller_status": "ACTIVE",
+    "country": "IN",
+    "created_date": "2024-02-19",
+    "service_level_target_pct": "95.00"
+  },
+  {
+    "seller_id": "SELL-000008",
+    "seller_name": "Seller 000008",
+    "seller_status": "ACTIVE",
+    "country": "IN",
+    "created_date": "2026-04-23",
+    "service_level_target_pct": "95.00"
+  },
+  {
+    "seller_id": "SELL-000009",
+    "seller_name": "Seller 000009",
+    "seller_status": "ACTIVE",
+    "country": "IN",
+    "created_date": "2024-09-04",
+    "service_level_target_pct": "95.00"
+  },
+  {
+    "seller_id": "SELL-000010",
+    "seller_name": "Seller 000010",
+    "seller_status": "ACTIVE",
+    "country": "IN",
+    "created_date": "2024-08-23",
+    "service_level_target_pct": "95.00"
+  },
+  {
+    "seller_id": "SELL-000011",
+    "seller_name": "Seller 000011",
+    "seller_status": "ACTIVE",
+    "country": "IN",
+    "created_date": "2024-08-28",
+    "service_level_target_pct": "95.00"
+  },
+  {
+    "seller_id": "SELL-000012",
+    "seller_name": "Seller 000012",
+    "seller_status": "ACTIVE",
+    "country": "IN",
+    "created_date": "2024-01-03",
+    "service_level_target_pct": "95.00"
+  },
+  {
+    "seller_id": "SELL-000013",
+    "seller_name": "Seller 000013",
+    "seller_status": "ACTIVE",
+    "country": "IN",
+    "created_date": "2025-12-31",
+    "service_level_target_pct": "95.00"
+  },
+  {
+    "seller_id": "SELL-000014",
+    "seller_name": "Seller 000014",
+    "seller_status": "ACTIVE",
+    "country": "IN",
+    "created_date": "2026-04-25",
+    "service_level_target_pct": "95.00"
+  },
+  {
+    "seller_id": "SELL-000015",
+    "seller_name": "Seller 000015",
+    "seller_status": "ACTIVE",
+    "country": "IN",
+    "created_date": "2025-07-13",
+    "service_level_target_pct": "95.00"
+  },
+  {
+    "seller_id": "SELL-000016",
+    "seller_name": "Seller 000016",
+    "seller_status": "ACTIVE",
+    "country": "IN",
+    "created_date": "2024-05-14",
+    "service_level_target_pct": "95.00"
+  },
+  {
+    "seller_id": "SELL-000017",
+    "seller_name": "Seller 000017",
+    "seller_status": "ACTIVE",
+    "country": "IN",
+    "created_date": "2024-03-01",
+    "service_level_target_pct": "95.00"
+  },
+  {
+    "seller_id": "SELL-000018",
+    "seller_name": "Seller 000018",
+    "seller_status": "ACTIVE",
+    "country": "IN",
+    "created_date": "2024-07-22",
+    "service_level_target_pct": "95.00"
+  },
+  {
+    "seller_id": "SELL-000019",
+    "seller_name": "Seller 000019",
+    "seller_status": "ACTIVE",
+    "country": "IN",
+    "created_date": "2024-07-17",
+    "service_level_target_pct": "95.00"
+  },
+  {
+    "seller_id": "SELL-000020",
+    "seller_name": "Seller 000020",
+    "seller_status": "ACTIVE",
+    "country": "IN",
+    "created_date": "2024-11-11",
+    "service_level_target_pct": "95.00"
+  }
+]

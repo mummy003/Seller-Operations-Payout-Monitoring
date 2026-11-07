@@ -1,0 +1,182 @@
+[
+  {
+    "seller_id": "SELL-000001",
+    "delivered_fulfillment_count": 101,
+    "late_fulfillment_count": 67,
+    "on_time_rate_pct": "33.66",
+    "average_review_rating": "2.96",
+    "seller_status": "ACTIVE",
+    "meets_service_target": "false"
+  },
+  {
+    "seller_id": "SELL-000002",
+    "delivered_fulfillment_count": 102,
+    "late_fulfillment_count": 58,
+    "on_time_rate_pct": "43.14",
+    "average_review_rating": "2.94",
+    "seller_status": "ACTIVE",
+    "meets_service_target": "false"
+  },
+  {
+    "seller_id": "SELL-000003",
+    "delivered_fulfillment_count": 106,
+    "late_fulfillment_count": 65,
+    "on_time_rate_pct": "38.68",
+    "average_review_rating": "2.79",
+    "seller_status": "ACTIVE",
+    "meets_service_target": "false"
+  },
+  {
+    "seller_id": "SELL-000004",
+    "delivered_fulfillment_count": 95,
+    "late_fulfillment_count": 53,
+    "on_time_rate_pct": "44.21",
+    "average_review_rating": "2.69",
+    "seller_status": "ACTIVE",
+    "meets_service_target": "false"
+  },
+  {
+    "seller_id": "SELL-000005",
+    "delivered_fulfillment_count": 102,
+    "late_fulfillment_count": 59,
+    "on_time_rate_pct": "42.16",
+    "average_review_rating": "2.86",
+    "seller_status": "ACTIVE",
+    "meets_service_target": "false"
+  },
+  {
+    "seller_id": "SELL-000006",
+    "delivered_fulfillment_count": 97,
+    "late_fulfillment_count": 59,
+    "on_time_rate_pct": "39.18",
+    "average_review_rating": "2.90",
+    "seller_status": "ACTIVE",
+    "meets_service_target": "false"
+  },
+  {
+    "seller_id": "SELL-000007",
+    "delivered_fulfillment_count": 89,
+    "late_fulfillment_count": 60,
+    "on_time_rate_pct": "32.58",
+    "average_review_rating": "3.55",
+    "seller_status": "ACTIVE",
+    "meets_service_target": "false"
+  },
+  {
+    "seller_id": "SELL-000008",
+    "delivered_fulfillment_count": 95,
+    "late_fulfillment_count": 60,
+    "on_time_rate_pct": "36.84",
+    "average_review_rating": "2.70",
+    "seller_status": "ACTIVE",
+    "meets_service_target": "false"
+  },
+  {
+    "seller_id": "SELL-000009",
+    "delivered_fulfillment_count": 95,
+    "late_fulfillment_count": 65,
+    "on_time_rate_pct": "31.58",
+    "average_review_rating": "2.78",
+    "seller_status": "ACTIVE",
+    "meets_service_target": "false"
+  },
+  {
+    "seller_id": "SELL-000010",
+    "delivered_fulfillment_count": 93,
+    "late_fulfillment_count": 54,
+    "on_time_rate_pct": "41.94",
+    "average_review_rating": "3.15",
+    "seller_status": "ACTIVE",
+    "meets_service_target": "false"
+  },
+  {
+    "seller_id": "SELL-000011",
+    "delivered_fulfillment_count": 101,
+    "late_fulfillment_count": 61,
+    "on_time_rate_pct": "39.60",
+    "average_review_rating": "3.03",
+    "seller_status": "ACTIVE",
+    "meets_service_target": "false"
+  },
+  {
+    "seller_id": "SELL-000012",
+    "delivered_fulfillment_count": 99,
+    "late_fulfillment_count": 61,
+    "on_time_rate_pct": "38.38",
+    "average_review_rating": "3.42",
+    "seller_status": "ACTIVE",
+    "meets_service_target": "false"
+  },
+  {
+    "seller_id": "SELL-000013",
+    "delivered_fulfillment_count": 99,
+    "late_fulfillment_count": 62,
+    "on_time_rate_pct": "37.37",
+    "average_review_rating": "3.14",
+    "seller_status": "ACTIVE",
+    "meets_service_target": "false"
+  },
+  {
+    "seller_id": "SELL-000014",
+    "delivered_fulfillment_count": 110,
+    "late_fulfillment_count": 66,
+    "on_time_rate_pct": "40.00",
+    "average_review_rating": "2.96",
+    "seller_status": "ACTIVE",
+    "meets_service_target": "false"
+  },
+  {
+    "seller_id": "SELL-000015",
+    "delivered_fulfillment_count": 125,
+    "late_fulfillment_count": 74,
+    "on_time_rate_pct": "40.80",
+    "average_review_rating": "3.16",
+    "seller_status": "ACTIVE",
+    "meets_service_target": "false"
+  },
+  {
+    "seller_id": "SELL-000016",
+    "delivered_fulfillment_count": 105,
+    "late_fulfillment_count": 61,
+    "on_time_rate_pct": "41.90",
+    "average_review_rating": "3.26",
+    "seller_status": "ACTIVE",
+    "meets_service_target": "false"
+  },
+  {
+    "seller_id": "SELL-000017",
+    "delivered_fulfillment_count": 107,
+    "late_fulfillment_count": 69,
+    "on_time_rate_pct": "35.51",
+    "average_review_rating": "3.19",
+    "seller_status": "ACTIVE",
+    "meets_service_target": "false"
+  },
+  {
+    "seller_id": "SELL-000018",
+    "delivered_fulfillment_count": 98,
+    "late_fulfillment_count": 65,
+    "on_time_rate_pct": "33.67",
+    "average_review_rating": "3.04",
+    "seller_status": "ACTIVE",
+    "meets_service_target": "false"
+  },
+  {
+    "seller_id": "SELL-000019",
+    "delivered_fulfillment_count": 103,
+    "late_fulfillment_count": 66,
+    "on_time_rate_pct": "35.92",
+    "average_review_rating": "3.15",
+    "seller_status": "ACTIVE",
+    "meets_service_target": "false"
+  },
+  {
+    "seller_id": "SELL-000020",
+    "delivered_fulfillment_count": 81,
+    "late_fulfillment_count": 49,
+    "on_time_rate_pct": "39.51",
+    "average_review_rating": "3.17",
+    "seller_status": "ACTIVE",
+    "meets_service_target": "false"
+  }
+]

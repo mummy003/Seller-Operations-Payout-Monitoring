@@ -1,0 +1,47 @@
+[
+  {
+    "commission_rule_id": "CR-ELECTRONICS",
+    "category": "Electronics",
+    "commission_rate_pct": "10",
+    "reserve_rate_pct": "5.00",
+    "effective_from": "2025-01-01",
+    "effective_to": "2027-12-31",
+    "is_active": "true"
+  },
+  {
+    "commission_rule_id": "CR-HOME",
+    "category": "Home",
+    "commission_rate_pct": "12",
+    "reserve_rate_pct": "5.00",
+    "effective_from": "2025-01-01",
+    "effective_to": "2027-12-31",
+    "is_active": "true"
+  },
+  {
+    "commission_rule_id": "CR-FASHION",
+    "category": "Fashion",
+    "commission_rate_pct": "15",
+    "reserve_rate_pct": "5.00",
+    "effective_from": "2025-01-01",
+    "effective_to": "2027-12-31",
+    "is_active": "true"
+  },
+  {
+    "commission_rule_id": "CR-BOOKS",
+    "category": "Books",
+    "commission_rate_pct": "8",
+    "reserve_rate_pct": "5.00",
+    "effective_from": "2025-01-01",
+    "effective_to": "2027-12-31",
+    "is_active": "true"
+  },
+  {
+    "commission_rule_id": "CR-BEAUTY",
+    "category": "Beauty",
+    "commission_rate_pct": "13",
+    "reserve_rate_pct": "5.00",
+    "effective_from": "2025-01-01",
+    "effective_to": "2027-12-31",
+    "is_active": "true"
+  }
+]

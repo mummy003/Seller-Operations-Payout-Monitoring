@@ -1,0 +1,1002 @@
+[
+  {
+    "dispute_id": "DSP-2026-000001",
+    "order_line_id": "OL-000001-01",
+    "seller_id": "SELL-000018",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "WON",
+    "dispute_amount": "77235.06",
+    "created_date": "2026-10-28",
+    "resolved_date": "2026-11-11"
+  },
+  {
+    "dispute_id": "DSP-2026-000002",
+    "order_line_id": "OL-000002-01",
+    "seller_id": "SELL-000005",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "OPEN",
+    "dispute_amount": "23946.69",
+    "created_date": "2026-09-10",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000003",
+    "order_line_id": "OL-000002-02",
+    "seller_id": "SELL-000016",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "LOST",
+    "dispute_amount": "50142.60",
+    "created_date": "2026-10-04",
+    "resolved_date": "2026-10-18"
+  },
+  {
+    "dispute_id": "DSP-2026-000004",
+    "order_line_id": "OL-000002-03",
+    "seller_id": "SELL-000020",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "WON",
+    "dispute_amount": "6114.78",
+    "created_date": "2026-09-30",
+    "resolved_date": "2026-10-14"
+  },
+  {
+    "dispute_id": "DSP-2026-000005",
+    "order_line_id": "OL-000003-01",
+    "seller_id": "SELL-000002",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "OPEN",
+    "dispute_amount": "11076.43",
+    "created_date": "2026-08-21",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000006",
+    "order_line_id": "OL-000004-01",
+    "seller_id": "SELL-000019",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "WON",
+    "dispute_amount": "94308.51",
+    "created_date": "2026-06-25",
+    "resolved_date": "2026-07-09"
+  },
+  {
+    "dispute_id": "DSP-2026-000007",
+    "order_line_id": "OL-000005-01",
+    "seller_id": "SELL-000019",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "LOST",
+    "dispute_amount": "21651.22",
+    "created_date": "2026-12-05",
+    "resolved_date": "2026-12-19"
+  },
+  {
+    "dispute_id": "DSP-2026-000008",
+    "order_line_id": "OL-000005-02",
+    "seller_id": "SELL-000010",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "OPEN",
+    "dispute_amount": "19978.02",
+    "created_date": "2026-11-03",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000009",
+    "order_line_id": "OL-000005-03",
+    "seller_id": "SELL-000009",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "WON",
+    "dispute_amount": "107930.73",
+    "created_date": "2026-11-02",
+    "resolved_date": "2026-11-16"
+  },
+  {
+    "dispute_id": "DSP-2026-000010",
+    "order_line_id": "OL-000006-01",
+    "seller_id": "SELL-000001",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "LOST",
+    "dispute_amount": "96212.55",
+    "created_date": "2026-09-27",
+    "resolved_date": "2026-10-11"
+  },
+  {
+    "dispute_id": "DSP-2026-000011",
+    "order_line_id": "OL-000007-01",
+    "seller_id": "SELL-000017",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "OPEN",
+    "dispute_amount": "2130.34",
+    "created_date": "2026-08-27",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000012",
+    "order_line_id": "OL-000007-02",
+    "seller_id": "SELL-000015",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "LOST",
+    "dispute_amount": "58243.24",
+    "created_date": "2026-08-27",
+    "resolved_date": "2026-09-10"
+  },
+  {
+    "dispute_id": "DSP-2026-000013",
+    "order_line_id": "OL-000008-01",
+    "seller_id": "SELL-000009",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "WON",
+    "dispute_amount": "21515.04",
+    "created_date": "2026-02-05",
+    "resolved_date": "2026-02-19"
+  },
+  {
+    "dispute_id": "DSP-2026-000014",
+    "order_line_id": "OL-000008-02",
+    "seller_id": "SELL-000012",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "WON",
+    "dispute_amount": "48622.24",
+    "created_date": "2026-02-09",
+    "resolved_date": "2026-02-23"
+  },
+  {
+    "dispute_id": "DSP-2026-000015",
+    "order_line_id": "OL-000008-03",
+    "seller_id": "SELL-000020",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "LOST",
+    "dispute_amount": "144207.93",
+    "created_date": "2026-02-09",
+    "resolved_date": "2026-02-23"
+  },
+  {
+    "dispute_id": "DSP-2026-000016",
+    "order_line_id": "OL-000009-01",
+    "seller_id": "SELL-000009",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "LOST",
+    "dispute_amount": "21515.04",
+    "created_date": "2026-04-06",
+    "resolved_date": "2026-04-20"
+  },
+  {
+    "dispute_id": "DSP-2026-000017",
+    "order_line_id": "OL-000010-01",
+    "seller_id": "SELL-000013",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "OPEN",
+    "dispute_amount": "830.34",
+    "created_date": "2026-05-21",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000018",
+    "order_line_id": "OL-000011-01",
+    "seller_id": "SELL-000001",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "OPEN",
+    "dispute_amount": "3864.06",
+    "created_date": "2026-11-07",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000019",
+    "order_line_id": "OL-000012-01",
+    "seller_id": "SELL-000007",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "WON",
+    "dispute_amount": "81805.24",
+    "created_date": "2026-06-06",
+    "resolved_date": "2026-06-20"
+  },
+  {
+    "dispute_id": "DSP-2026-000020",
+    "order_line_id": "OL-000013-01",
+    "seller_id": "SELL-000003",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "OPEN",
+    "dispute_amount": "72084.09",
+    "created_date": "2026-04-01",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000021",
+    "order_line_id": "OL-000013-02",
+    "seller_id": "SELL-000010",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "OPEN",
+    "dispute_amount": "50337.44",
+    "created_date": "2026-03-23",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000022",
+    "order_line_id": "OL-000013-03",
+    "seller_id": "SELL-000019",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "WON",
+    "dispute_amount": "84628.53",
+    "created_date": "2026-03-30",
+    "resolved_date": "2026-04-13"
+  },
+  {
+    "dispute_id": "DSP-2026-000023",
+    "order_line_id": "OL-000014-01",
+    "seller_id": "SELL-000008",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "WON",
+    "dispute_amount": "83405.34",
+    "created_date": "2026-09-25",
+    "resolved_date": "2026-10-09"
+  },
+  {
+    "dispute_id": "DSP-2026-000024",
+    "order_line_id": "OL-000015-01",
+    "seller_id": "SELL-000013",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "OPEN",
+    "dispute_amount": "2008.56",
+    "created_date": "2026-06-12",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000025",
+    "order_line_id": "OL-000015-02",
+    "seller_id": "SELL-000001",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "WON",
+    "dispute_amount": "32070.85",
+    "created_date": "2026-06-24",
+    "resolved_date": "2026-07-08"
+  },
+  {
+    "dispute_id": "DSP-2026-000026",
+    "order_line_id": "OL-000016-01",
+    "seller_id": "SELL-000018",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "LOST",
+    "dispute_amount": "37754.94",
+    "created_date": "2026-06-02",
+    "resolved_date": "2026-06-16"
+  },
+  {
+    "dispute_id": "DSP-2026-000027",
+    "order_line_id": "OL-000017-01",
+    "seller_id": "SELL-000006",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "LOST",
+    "dispute_amount": "15725.42",
+    "created_date": "2026-05-11",
+    "resolved_date": "2026-05-25"
+  },
+  {
+    "dispute_id": "DSP-2026-000028",
+    "order_line_id": "OL-000018-01",
+    "seller_id": "SELL-000002",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "LOST",
+    "dispute_amount": "78640.50",
+    "created_date": "2026-10-22",
+    "resolved_date": "2026-11-05"
+  },
+  {
+    "dispute_id": "DSP-2026-000029",
+    "order_line_id": "OL-000019-01",
+    "seller_id": "SELL-000016",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "WON",
+    "dispute_amount": "36745.22",
+    "created_date": "2026-06-08",
+    "resolved_date": "2026-06-22"
+  },
+  {
+    "dispute_id": "DSP-2026-000030",
+    "order_line_id": "OL-000020-01",
+    "seller_id": "SELL-000002",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "WON",
+    "dispute_amount": "11076.43",
+    "created_date": "2026-10-21",
+    "resolved_date": "2026-11-04"
+  },
+  {
+    "dispute_id": "DSP-2026-000031",
+    "order_line_id": "OL-000020-02",
+    "seller_id": "SELL-000010",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "WON",
+    "dispute_amount": "137346.24",
+    "created_date": "2026-10-07",
+    "resolved_date": "2026-10-21"
+  },
+  {
+    "dispute_id": "DSP-2026-000032",
+    "order_line_id": "OL-000020-03",
+    "seller_id": "SELL-000020",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "LOST",
+    "dispute_amount": "6114.78",
+    "created_date": "2026-09-29",
+    "resolved_date": "2026-10-13"
+  },
+  {
+    "dispute_id": "DSP-2026-000033",
+    "order_line_id": "OL-000021-01",
+    "seller_id": "SELL-000015",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "OPEN",
+    "dispute_amount": "45891.11",
+    "created_date": "2026-08-15",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000034",
+    "order_line_id": "OL-000022-01",
+    "seller_id": "SELL-000009",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "LOST",
+    "dispute_amount": "71953.82",
+    "created_date": "2026-05-10",
+    "resolved_date": "2026-05-24"
+  },
+  {
+    "dispute_id": "DSP-2026-000035",
+    "order_line_id": "OL-000022-02",
+    "seller_id": "SELL-000006",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "LOST",
+    "dispute_amount": "21397.50",
+    "created_date": "2026-05-22",
+    "resolved_date": "2026-06-05"
+  },
+  {
+    "dispute_id": "DSP-2026-000036",
+    "order_line_id": "OL-000023-01",
+    "seller_id": "SELL-000015",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "WON",
+    "dispute_amount": "22897.51",
+    "created_date": "2026-05-08",
+    "resolved_date": "2026-05-22"
+  },
+  {
+    "dispute_id": "DSP-2026-000037",
+    "order_line_id": "OL-000024-01",
+    "seller_id": "SELL-000009",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "OPEN",
+    "dispute_amount": "8988.55",
+    "created_date": "2026-03-08",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000038",
+    "order_line_id": "OL-000025-01",
+    "seller_id": "SELL-000009",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "LOST",
+    "dispute_amount": "22297.05",
+    "created_date": "2026-02-20",
+    "resolved_date": "2026-03-06"
+  },
+  {
+    "dispute_id": "DSP-2026-000039",
+    "order_line_id": "OL-000026-01",
+    "seller_id": "SELL-000001",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "WON",
+    "dispute_amount": "37082.85",
+    "created_date": "2026-05-14",
+    "resolved_date": "2026-05-28"
+  },
+  {
+    "dispute_id": "DSP-2026-000040",
+    "order_line_id": "OL-000026-02",
+    "seller_id": "SELL-000019",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "LOST",
+    "dispute_amount": "53317.98",
+    "created_date": "2026-05-14",
+    "resolved_date": "2026-05-28"
+  },
+  {
+    "dispute_id": "DSP-2026-000041",
+    "order_line_id": "OL-000026-03",
+    "seller_id": "SELL-000014",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "OPEN",
+    "dispute_amount": "83850.33",
+    "created_date": "2026-06-03",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000042",
+    "order_line_id": "OL-000027-01",
+    "seller_id": "SELL-000014",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "WON",
+    "dispute_amount": "46389.16",
+    "created_date": "2026-10-13",
+    "resolved_date": "2026-10-27"
+  },
+  {
+    "dispute_id": "DSP-2026-000043",
+    "order_line_id": "OL-000027-02",
+    "seller_id": "SELL-000009",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "LOST",
+    "dispute_amount": "21971.76",
+    "created_date": "2026-11-10",
+    "resolved_date": "2026-11-24"
+  },
+  {
+    "dispute_id": "DSP-2026-000044",
+    "order_line_id": "OL-000027-03",
+    "seller_id": "SELL-000007",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "LOST",
+    "dispute_amount": "3816.74",
+    "created_date": "2026-11-04",
+    "resolved_date": "2026-11-18"
+  },
+  {
+    "dispute_id": "DSP-2026-000045",
+    "order_line_id": "OL-000028-01",
+    "seller_id": "SELL-000020",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "OPEN",
+    "dispute_amount": "75851.67",
+    "created_date": "2026-03-17",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000046",
+    "order_line_id": "OL-000028-02",
+    "seller_id": "SELL-000016",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "WON",
+    "dispute_amount": "110235.66",
+    "created_date": "2026-03-03",
+    "resolved_date": "2026-03-17"
+  },
+  {
+    "dispute_id": "DSP-2026-000047",
+    "order_line_id": "OL-000028-03",
+    "seller_id": "SELL-000002",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "WON",
+    "dispute_amount": "95702.58",
+    "created_date": "2026-03-26",
+    "resolved_date": "2026-04-09"
+  },
+  {
+    "dispute_id": "DSP-2026-000048",
+    "order_line_id": "OL-000029-01",
+    "seller_id": "SELL-000015",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "WON",
+    "dispute_amount": "95988.76",
+    "created_date": "2026-12-14",
+    "resolved_date": "2026-12-28"
+  },
+  {
+    "dispute_id": "DSP-2026-000049",
+    "order_line_id": "OL-000029-02",
+    "seller_id": "SELL-000003",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "OPEN",
+    "dispute_amount": "50326.48",
+    "created_date": "2026-11-08",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000050",
+    "order_line_id": "OL-000030-01",
+    "seller_id": "SELL-000016",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "WON",
+    "dispute_amount": "111518.97",
+    "created_date": "2026-05-29",
+    "resolved_date": "2026-06-12"
+  },
+  {
+    "dispute_id": "DSP-2026-000051",
+    "order_line_id": "OL-000030-02",
+    "seller_id": "SELL-000015",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "WON",
+    "dispute_amount": "8123.52",
+    "created_date": "2026-06-13",
+    "resolved_date": "2026-06-27"
+  },
+  {
+    "dispute_id": "DSP-2026-000052",
+    "order_line_id": "OL-000030-03",
+    "seller_id": "SELL-000003",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "LOST",
+    "dispute_amount": "50908.32",
+    "created_date": "2026-05-29",
+    "resolved_date": "2026-06-12"
+  },
+  {
+    "dispute_id": "DSP-2026-000053",
+    "order_line_id": "OL-000031-01",
+    "seller_id": "SELL-000013",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "LOST",
+    "dispute_amount": "46875.42",
+    "created_date": "2026-06-06",
+    "resolved_date": "2026-06-20"
+  },
+  {
+    "dispute_id": "DSP-2026-000054",
+    "order_line_id": "OL-000031-02",
+    "seller_id": "SELL-000017",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "OPEN",
+    "dispute_amount": "27863.80",
+    "created_date": "2026-06-10",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000055",
+    "order_line_id": "OL-000031-03",
+    "seller_id": "SELL-000005",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "OPEN",
+    "dispute_amount": "37950.12",
+    "created_date": "2026-07-03",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000056",
+    "order_line_id": "OL-000032-01",
+    "seller_id": "SELL-000008",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "OPEN",
+    "dispute_amount": "81827.34",
+    "created_date": "2026-05-05",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000057",
+    "order_line_id": "OL-000032-02",
+    "seller_id": "SELL-000017",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "WON",
+    "dispute_amount": "34740.24",
+    "created_date": "2026-04-28",
+    "resolved_date": "2026-05-12"
+  },
+  {
+    "dispute_id": "DSP-2026-000058",
+    "order_line_id": "OL-000033-01",
+    "seller_id": "SELL-000001",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "WON",
+    "dispute_amount": "96212.55",
+    "created_date": "2026-06-06",
+    "resolved_date": "2026-06-20"
+  },
+  {
+    "dispute_id": "DSP-2026-000059",
+    "order_line_id": "OL-000033-02",
+    "seller_id": "SELL-000019",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "OPEN",
+    "dispute_amount": "28557.59",
+    "created_date": "2026-05-22",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000060",
+    "order_line_id": "OL-000033-03",
+    "seller_id": "SELL-000011",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "LOST",
+    "dispute_amount": "16846.34",
+    "created_date": "2026-05-28",
+    "resolved_date": "2026-06-11"
+  },
+  {
+    "dispute_id": "DSP-2026-000061",
+    "order_line_id": "OL-000034-01",
+    "seller_id": "SELL-000015",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "OPEN",
+    "dispute_amount": "4544.93",
+    "created_date": "2026-07-21",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000062",
+    "order_line_id": "OL-000034-02",
+    "seller_id": "SELL-000018",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "LOST",
+    "dispute_amount": "37754.94",
+    "created_date": "2026-07-24",
+    "resolved_date": "2026-08-07"
+  },
+  {
+    "dispute_id": "DSP-2026-000063",
+    "order_line_id": "OL-000034-03",
+    "seller_id": "SELL-000002",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "OPEN",
+    "dispute_amount": "133714.50",
+    "created_date": "2026-07-28",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000064",
+    "order_line_id": "OL-000035-01",
+    "seller_id": "SELL-000011",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "LOST",
+    "dispute_amount": "70818.57",
+    "created_date": "2026-10-02",
+    "resolved_date": "2026-10-16"
+  },
+  {
+    "dispute_id": "DSP-2026-000065",
+    "order_line_id": "OL-000036-01",
+    "seller_id": "SELL-000006",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "OPEN",
+    "dispute_amount": "47176.26",
+    "created_date": "2026-02-20",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000066",
+    "order_line_id": "OL-000036-02",
+    "seller_id": "SELL-000002",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "WON",
+    "dispute_amount": "29290.56",
+    "created_date": "2026-02-26",
+    "resolved_date": "2026-03-12"
+  },
+  {
+    "dispute_id": "DSP-2026-000067",
+    "order_line_id": "OL-000036-03",
+    "seller_id": "SELL-000005",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "OPEN",
+    "dispute_amount": "58973.78",
+    "created_date": "2026-02-21",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000068",
+    "order_line_id": "OL-000037-01",
+    "seller_id": "SELL-000018",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "WON",
+    "dispute_amount": "15865.60",
+    "created_date": "2026-05-24",
+    "resolved_date": "2026-06-07"
+  },
+  {
+    "dispute_id": "DSP-2026-000069",
+    "order_line_id": "OL-000037-02",
+    "seller_id": "SELL-000011",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "WON",
+    "dispute_amount": "19464.76",
+    "created_date": "2026-05-16",
+    "resolved_date": "2026-05-30"
+  },
+  {
+    "dispute_id": "DSP-2026-000070",
+    "order_line_id": "OL-000038-01",
+    "seller_id": "SELL-000016",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "WON",
+    "dispute_amount": "113826.33",
+    "created_date": "2026-04-14",
+    "resolved_date": "2026-04-28"
+  },
+  {
+    "dispute_id": "DSP-2026-000071",
+    "order_line_id": "OL-000039-01",
+    "seller_id": "SELL-000017",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "LOST",
+    "dispute_amount": "46203.69",
+    "created_date": "2026-07-11",
+    "resolved_date": "2026-07-25"
+  },
+  {
+    "dispute_id": "DSP-2026-000072",
+    "order_line_id": "OL-000039-02",
+    "seller_id": "SELL-000014",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "WON",
+    "dispute_amount": "58923.12",
+    "created_date": "2026-06-18",
+    "resolved_date": "2026-07-02"
+  },
+  {
+    "dispute_id": "DSP-2026-000073",
+    "order_line_id": "OL-000040-01",
+    "seller_id": "SELL-000020",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "LOST",
+    "dispute_amount": "11707.50",
+    "created_date": "2026-06-08",
+    "resolved_date": "2026-06-22"
+  },
+  {
+    "dispute_id": "DSP-2026-000074",
+    "order_line_id": "OL-000040-02",
+    "seller_id": "SELL-000016",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "OPEN",
+    "dispute_amount": "74345.98",
+    "created_date": "2026-06-09",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000075",
+    "order_line_id": "OL-000041-01",
+    "seller_id": "SELL-000002",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "WON",
+    "dispute_amount": "51770.90",
+    "created_date": "2026-05-12",
+    "resolved_date": "2026-05-26"
+  },
+  {
+    "dispute_id": "DSP-2026-000076",
+    "order_line_id": "OL-000041-02",
+    "seller_id": "SELL-000012",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "LOST",
+    "dispute_amount": "85749.34",
+    "created_date": "2026-04-12",
+    "resolved_date": "2026-04-26"
+  },
+  {
+    "dispute_id": "DSP-2026-000077",
+    "order_line_id": "OL-000041-03",
+    "seller_id": "SELL-000015",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "OPEN",
+    "dispute_amount": "143983.14",
+    "created_date": "2026-04-10",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000078",
+    "order_line_id": "OL-000042-01",
+    "seller_id": "SELL-000014",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "LOST",
+    "dispute_amount": "88384.68",
+    "created_date": "2026-08-13",
+    "resolved_date": "2026-08-27"
+  },
+  {
+    "dispute_id": "DSP-2026-000079",
+    "order_line_id": "OL-000042-02",
+    "seller_id": "SELL-000005",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "WON",
+    "dispute_amount": "33812.20",
+    "created_date": "2026-08-06",
+    "resolved_date": "2026-08-20"
+  },
+  {
+    "dispute_id": "DSP-2026-000080",
+    "order_line_id": "OL-000043-01",
+    "seller_id": "SELL-000015",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "WON",
+    "dispute_amount": "43924.58",
+    "created_date": "2026-11-11",
+    "resolved_date": "2026-11-25"
+  },
+  {
+    "dispute_id": "DSP-2026-000081",
+    "order_line_id": "OL-000044-01",
+    "seller_id": "SELL-000011",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "OPEN",
+    "dispute_amount": "29332.60",
+    "created_date": "2026-09-05",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000082",
+    "order_line_id": "OL-000044-02",
+    "seller_id": "SELL-000013",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "WON",
+    "dispute_amount": "30281.31",
+    "created_date": "2026-09-12",
+    "resolved_date": "2026-09-26"
+  },
+  {
+    "dispute_id": "DSP-2026-000083",
+    "order_line_id": "OL-000045-01",
+    "seller_id": "SELL-000002",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "WON",
+    "dispute_amount": "44571.50",
+    "created_date": "2026-01-27",
+    "resolved_date": "2026-02-10"
+  },
+  {
+    "dispute_id": "DSP-2026-000084",
+    "order_line_id": "OL-000045-02",
+    "seller_id": "SELL-000011",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "LOST",
+    "dispute_amount": "14666.30",
+    "created_date": "2026-02-03",
+    "resolved_date": "2026-02-17"
+  },
+  {
+    "dispute_id": "DSP-2026-000085",
+    "order_line_id": "OL-000046-01",
+    "seller_id": "SELL-000018",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "OPEN",
+    "dispute_amount": "39796.20",
+    "created_date": "2026-02-19",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000086",
+    "order_line_id": "OL-000046-02",
+    "seller_id": "SELL-000007",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "LOST",
+    "dispute_amount": "17481.66",
+    "created_date": "2026-02-19",
+    "resolved_date": "2026-03-05"
+  },
+  {
+    "dispute_id": "DSP-2026-000087",
+    "order_line_id": "OL-000046-03",
+    "seller_id": "SELL-000013",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "LOST",
+    "dispute_amount": "21893.38",
+    "created_date": "2026-02-12",
+    "resolved_date": "2026-02-26"
+  },
+  {
+    "dispute_id": "DSP-2026-000088",
+    "order_line_id": "OL-000047-01",
+    "seller_id": "SELL-000017",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "LOST",
+    "dispute_amount": "2130.34",
+    "created_date": "2026-06-01",
+    "resolved_date": "2026-06-15"
+  },
+  {
+    "dispute_id": "DSP-2026-000089",
+    "order_line_id": "OL-000048-01",
+    "seller_id": "SELL-000018",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "WON",
+    "dispute_amount": "12622.71",
+    "created_date": "2026-10-02",
+    "resolved_date": "2026-10-16"
+  },
+  {
+    "dispute_id": "DSP-2026-000090",
+    "order_line_id": "OL-000048-02",
+    "seller_id": "SELL-000010",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "LOST",
+    "dispute_amount": "90660.24",
+    "created_date": "2026-10-14",
+    "resolved_date": "2026-10-28"
+  },
+  {
+    "dispute_id": "DSP-2026-000091",
+    "order_line_id": "OL-000048-03",
+    "seller_id": "SELL-000017",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "OPEN",
+    "dispute_amount": "50930.25",
+    "created_date": "2026-10-12",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000092",
+    "order_line_id": "OL-000049-01",
+    "seller_id": "SELL-000017",
+    "dispute_type": "CHARGEBACK",
+    "dispute_status": "OPEN",
+    "dispute_amount": "16976.75",
+    "created_date": "2026-09-16",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000093",
+    "order_line_id": "OL-000049-02",
+    "seller_id": "SELL-000004",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "OPEN",
+    "dispute_amount": "73977.88",
+    "created_date": "2026-09-10",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000094",
+    "order_line_id": "OL-000050-01",
+    "seller_id": "SELL-000016",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "OPEN",
+    "dispute_amount": "113826.33",
+    "created_date": "2026-09-13",
+    "resolved_date": ""
+  },
+  {
+    "dispute_id": "DSP-2026-000095",
+    "order_line_id": "OL-000050-02",
+    "seller_id": "SELL-000012",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "LOST",
+    "dispute_amount": "32385.32",
+    "created_date": "2026-08-30",
+    "resolved_date": "2026-09-13"
+  },
+  {
+    "dispute_id": "DSP-2026-000096",
+    "order_line_id": "OL-000051-01",
+    "seller_id": "SELL-000008",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "LOST",
+    "dispute_amount": "21167.25",
+    "created_date": "2026-04-18",
+    "resolved_date": "2026-05-02"
+  },
+  {
+    "dispute_id": "DSP-2026-000097",
+    "order_line_id": "OL-000051-02",
+    "seller_id": "SELL-000010",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "LOST",
+    "dispute_amount": "25168.72",
+    "created_date": "2026-05-03",
+    "resolved_date": "2026-05-17"
+  },
+  {
+    "dispute_id": "DSP-2026-000098",
+    "order_line_id": "OL-000051-03",
+    "seller_id": "SELL-000001",
+    "dispute_type": "NOT_AS_DESCRIBED",
+    "dispute_status": "WON",
+    "dispute_amount": "4918.15",
+    "created_date": "2026-04-09",
+    "resolved_date": "2026-04-23"
+  },
+  {
+    "dispute_id": "DSP-2026-000099",
+    "order_line_id": "OL-000052-01",
+    "seller_id": "SELL-000019",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "WON",
+    "dispute_amount": "62134.02",
+    "created_date": "2026-05-17",
+    "resolved_date": "2026-05-31"
+  },
+  {
+    "dispute_id": "DSP-2026-000100",
+    "order_line_id": "OL-000053-01",
+    "seller_id": "SELL-000011",
+    "dispute_type": "ITEM_NOT_RECEIVED",
+    "dispute_status": "LOST",
+    "dispute_amount": "9490.20",
+    "created_date": "2026-02-23",
+    "resolved_date": "2026-03-09"
+  }
+]
