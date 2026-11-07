@@ -1,0 +1,21 @@
+{
+  "validation": "PASS",
+  "seed": 20261022,
+  "scale": 0.01,
+  "row_counts": {
+    "seller": 20,
+    "product_listing": 200,
+    "order": 1000,
+    "order_line": 2004,
+    "fulfillment": 2004,
+    "customer_review": 597,
+    "dispute": 100,
+    "commission_rule": 5,
+    "payout": 20,
+    "payout_line": 1873,
+    "event_history": 6062,
+    "seller_metrics": 20,
+    "exception_cases": 5
+  },
+  "output_directory": "data"
+}
