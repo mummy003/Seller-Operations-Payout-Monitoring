@@ -1,34 +1,39 @@
 # Seller Operations & Payout Monitoring System
 
-An end-to-end data engineering project built using Python, SQL, and SQLite to monitor seller performance, order fulfillment, disputes, commissions, payout eligibility, and operational exceptions.
+An end-to-end Data Engineering project built using Python, SQL, SQLite, Pandas, and Pytest to monitor seller operations, order fulfillment, disputes, commissions, payout eligibility, and operational exceptions.
 
 ## 1. Project Overview
 
-This project simulates an e-commerce seller operations platform. It generates structured business data, validates relationships and business rules, tracks seller performance, and identifies payout-related exceptions.
+This project simulates an e-commerce seller operations platform. It generates synthetic business data, validates data relationships, applies business rules, monitors seller performance, and identifies payout-related exceptions.
+
+The system helps track seller activities and detect operational issues that may affect payout accuracy and business performance.
 
 ## 2. Key Features
 
 - Synthetic seller and product listing data generation
-- Order and order-line management
-- Multi-seller order fulfillment tracking
-- Shipment and delivery monitoring
+- Order and order-line processing
+- Multi-seller order management
+- Shipment and delivery tracking
 - Commission and reserve calculations
-- Dispute and chargeback tracking
-- Payout eligibility monitoring
+- Dispute and chargeback monitoring
+- Payout eligibility validation
 - Seller performance metrics
-- Exception and anomaly scenario generation
-- Data validation and integrity checks
-- CSV, JSON, and SQL/SQLite data outputs
+- Operational exception detection
+- Data integrity and business rule validation
+- CSV, JSON, and SQLite data exports
+- Fixed-seed reproducible data generation
 
 ## 3. Technology Stack
 
-- Python
-- SQL
-- SQLite
-- Pandas
-- CSV and JSON
-- Pytest
-- Git and GitHub
+| Technology | Purpose |
+|---|---|
+| Python | Data generation and business logic |
+| SQL | Data querying and management |
+| SQLite | Relational database |
+| Pandas | Data processing |
+| CSV / JSON | Data storage and export |
+| Pytest | Automated testing |
+| Git & GitHub | Version control |
 
 ## 4. Project Structure
 
@@ -36,6 +41,10 @@ This project simulates an e-commerce seller operations platform. It generates st
 Seller-Operations-Payout-Monitoring/
 │
 ├── data/
+│   ├── raw/
+│   ├── processed/
+│   ├── ground_truth/
+│   ├── sql/
 │   ├── README_generated.md
 │   ├── source_manifest.json
 │   └── validation_summary.json
@@ -55,9 +64,7 @@ Seller-Operations-Payout-Monitoring/
 └── README.md
 ```
 
-## 5. Data Entities
-
-The system contains the following major entities:
+## 5. Main Data Entities
 
 1. Seller
 2. Product Listing
@@ -75,73 +82,118 @@ The system contains the following major entities:
 
 ## 6. Exception Scenarios
 
-The project includes the following operational exception scenarios:
+The system includes the following business exception scenarios:
 
 - Payout before delivery or hold release
-- Duplicate commission
-- Active listing belonging to a suspended seller
+- Duplicate commission application
+- Suspended seller with an active listing
 - Missing dispute deduction
-- Payout total mismatch
+- Payout reconciliation mismatch
+
+Ground-truth labels are generated to identify expected exception outcomes.
 
 ## 7. Data Validation
 
-The validation process includes:
+The generator performs data validation checks, including:
 
 - Primary key uniqueness
-- Foreign key integrity
-- Required field checks
-- Business rule validation
-- Data consistency checks
+- Foreign key relationships
+- Required field validation
+- Business rule checks
+- Date consistency
+- Payout amount reconciliation
+- Entity relationship consistency
 
-## 8. Test Execution
+## 8. Installation
 
-Install pytest:
-
-```bash
-pip install pytest
-```
-
-Run tests from the project root:
+Install the required Python packages:
 
 ```bash
-pytest -v
+pip install pandas pytest
 ```
 
 ## 9. Data Generation
 
-Run the data generator from the project root:
+Run the generator from the project root:
+
+Starter dataset:
 
 ```bash
 python src/generate_data.py --scale 0.01
 ```
 
-For full-scale generation:
+Full-scale dataset:
 
 ```bash
 python src/generate_data.py --scale 1.0
 ```
 
-The random seed used for reproducible data generation is:
+The project uses a fixed random seed:
 
 ```text
 20261022
 ```
 
-## 10. Validation Result
+This supports reproducible synthetic data generation.
 
-The starter dataset generation completed successfully with validation status `PASS`.
+## 10. Automated Testing
 
-See `data/validation_summary.json` for the generated dataset's validation status and row counts.
+Run the automated tests:
 
-## 11. Documentation
+```bash
+python -m pytest tests/ -v
+```
 
-Refer to:
+The test suite checks data uniqueness, basic data validity, payout values, dispute statuses, and exception scenarios.
 
-- `docs/data_dictionary.md` for entity and field definitions.
-- `data/README_generated.md` for generated dataset information.
-- `data/source_manifest.json` for dataset provenance information.
-- `data/validation_summary.json` for validation results.
+## 11. Generated Outputs
 
-## 12. Project Purpose
+The project generates:
 
-This project demonstrates practical skills in Python-based data generation, SQL data management, relational data modeling, data validation, business rule implementation, and exception monitoring.
+- Raw CSV files
+- Processed JSON files
+- Ground-truth exception data
+- SQLite database and SQL exports
+- Source manifest
+- Validation summary
+
+## 12. Validation Status
+
+The starter dataset completed successfully with:
+
+```text
+Validation: PASS
+Seed: 20261022
+Scale: 0.01
+```
+
+Full-scale generation and reproducibility checks are pending final verification.
+
+## 13. Documentation
+docs/data_dictionary.md – Entity and field definitions.
+data/README_generated.md – Generated dataset details.
+data/source_manifest.json – Dataset provenance.
+data/validation_summary.json – Validation results.
+
+14. Project Objective
+This project demonstrates practical skills in:
+
+Python programming
+
+Data engineering fundamentals
+
+Relational database design
+
+SQL and SQLite
+
+Synthetic data generation
+
+Data quality and validation
+
+Business rule implementation
+
+Exception and anomaly monitoring
+
+Automated testing
+
+Git and GitHub version control
