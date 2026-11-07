@@ -1,47 +1,120 @@
-# Seller Operations & Payout Monitoring System
+Seller Operations & Payout Monitoring System
+An end-to-end Data Engineering project developed using Python, SQL, SQLite, Pandas, and Pytest to monitor seller operations, order fulfillment, disputes, commissions, payout eligibility, and operational exceptions.
 
-An end-to-end Data Engineering project built using Python, SQL, SQLite, Pandas, and Pytest to monitor seller operations, order fulfillment, disputes, commissions, payout eligibility, and operational exceptions.
+1. Project Overview
+The Seller Operations & Payout Monitoring System is a synthetic e-commerce data engineering project designed to simulate seller activities and monitor payout operations.
 
-## 1. Project Overview
+The system generates structured business datasets, maintains relationships between multiple entities, validates business rules, tracks seller performance, and identifies operational anomalies that may affect payout accuracy.
 
-This project simulates an e-commerce seller operations platform. It generates synthetic business data, validates data relationships, applies business rules, monitors seller performance, and identifies payout-related exceptions.
+It provides a reproducible data generation process and exports data in CSV, JSON, and SQLite formats.
 
-The system helps track seller activities and detect operational issues that may affect payout accuracy and business performance.
+2. Business Objectives
+Monitor seller operational performance.
 
-## 2. Key Features
+Track product listings and seller activities.
 
-- Synthetic seller and product listing data generation
-- Order and order-line processing
-- Multi-seller order management
-- Shipment and delivery tracking
-- Commission and reserve calculations
-- Dispute and chargeback monitoring
-- Payout eligibility validation
-- Seller performance metrics
-- Operational exception detection
-- Data integrity and business rule validation
-- CSV, JSON, and SQLite data exports
-- Fixed-seed reproducible data generation
+Manage orders and order-line information.
 
-## 3. Technology Stack
+Monitor shipment and delivery status.
 
-| Technology | Purpose |
-|---|---|
-| Python | Data generation and business logic |
-| SQL | Data querying and management |
-| SQLite | Relational database |
-| Pandas | Data processing |
-| CSV / JSON | Data storage and export |
-| Pytest | Automated testing |
-| Git & GitHub | Version control |
+Calculate commissions and reserve amounts.
 
-## 4. Project Structure
+Track disputes and chargebacks.
 
-```text
+Identify payout eligibility issues.
+
+Detect operational exceptions.
+
+Maintain data consistency and traceability.
+
+Generate ground-truth labels for known exception scenarios.
+
+3. Key Features
+Synthetic seller and product listing data generation.
+
+Order and order-line processing.
+
+Multi-seller order management.
+
+Fulfillment and delivery tracking.
+
+Commission calculation and monitoring.
+
+Reserve and payout eligibility tracking.
+
+Dispute and chargeback monitoring.
+
+Seller performance metrics.
+
+Event history tracking.
+
+Operational exception detection.
+
+Ground-truth exception labeling.
+
+Primary key and foreign key validation.
+
+Business rule and data consistency checks.
+
+CSV and JSON exports.
+
+SQLite database generation.
+
+Fixed-seed reproducible data generation.
+
+4. Technology Stack
+Technology	Purpose
+Python	Data generation and business logic
+SQL	Data querying and management
+SQLite	Relational database storage
+Pandas	Data processing and validation
+CSV	Raw data storage
+JSON	Processed data storage
+Pytest	Automated testing
+Git	Version control
+GitHub	Project hosting and collaboration
+5. Project Architecture
+The project follows a structured data engineering workflow:
+
+Generate synthetic business data.
+
+Create related seller, listing, order, and payout records.
+
+Apply business rules and calculations.
+
+Validate primary keys and relationships.
+
+Identify operational exceptions.
+
+Generate ground-truth labels.
+
+Export data into CSV and JSON formats.
+
+Store relational data in SQLite.
+
+Execute automated tests.
+
+Review validation and generation reports.
+
+6. Project Structure
 Seller-Operations-Payout-Monitoring/
 │
 ├── data/
 │   ├── raw/
+│   │   ├── seller.csv
+│   │   ├── product_listing.csv
+│   │   ├── commission_rule.csv
+│   │   ├── order.csv
+│   │   ├── order_line.csv
+│   │   ├── fulfillment.csv
+│   │   ├── customer_review.csv
+│   │   ├── dispute.csv
+│   │   ├── payout.csv
+│   │   ├── payout_line.csv
+│   │   ├── event_history.csv
+│   │   ├── seller_metrics.csv
+│   │   └── exception_cases.csv
+│   │
 │   ├── processed/
 │   ├── ground_truth/
 │   ├── sql/
@@ -62,138 +135,221 @@ Seller-Operations-Payout-Monitoring/
 │
 ├── .gitignore
 └── README.md
-```
+7. Main Data Entities
+The project contains the following entities:
 
-## 5. Main Data Entities
+Entity	Description
+Seller	Seller profile and operational status
+Product Listing	Products listed by sellers
+Commission Rule	Commission calculation rules
+Order	Customer order information
+Order Line	Individual items within orders
+Fulfillment	Shipment and delivery information
+Customer Review	Customer feedback
+Dispute	Dispute and chargeback records
+Payout	Seller payout information
+Payout Line	Individual payout transactions
+Event History	Operational event tracking
+Seller Metrics	Seller performance information
+Exception Cases	Identified operational anomalies
+8. Business Rules
+The system uses business rules to monitor operational activities.
 
-1. Seller
-2. Product Listing
-3. Commission Rule
-4. Order
-5. Order Line
-6. Fulfillment
-7. Customer Review
-8. Dispute
-9. Payout
-10. Payout Line
-11. Event History
-12. Seller Metrics
-13. Exception Cases
+Orders are associated with valid sellers and product listings.
 
-## 6. Exception Scenarios
+Order lines maintain references to their parent orders.
 
-The system includes the following business exception scenarios:
+Fulfillment records are associated with order lines.
 
-- Payout before delivery or hold release
-- Duplicate commission application
-- Suspended seller with an active listing
-- Missing dispute deduction
-- Payout reconciliation mismatch
+Commission amounts follow the configured commission rules.
 
-Ground-truth labels are generated to identify expected exception outcomes.
+Payout eligibility depends on applicable operational conditions.
 
-## 7. Data Validation
+Disputes are tracked using their status and related amounts.
 
-The generator performs data validation checks, including:
+Seller status is considered during listing and payout monitoring.
 
-- Primary key uniqueness
-- Foreign key relationships
-- Required field validation
-- Business rule checks
-- Date consistency
-- Payout amount reconciliation
-- Entity relationship consistency
+Payout totals are checked against their associated payout lines.
 
-## 8. Installation
+9. Exception Scenarios
+The generator includes five known operational exception scenarios:
 
-Install the required Python packages:
+1. Payout Before Delivery or Hold Release
+Identifies payout records that violate delivery or reserve-hold conditions.
 
-```bash
+2. Duplicate Commission
+Identifies duplicate commission application.
+
+3. Suspended Seller Continues Listing
+Identifies active listings associated with suspended sellers.
+
+4. Missing Dispute Deduction
+Identifies payout records where an applicable dispute deduction is missing.
+
+5. Payout Total Mismatch
+Identifies differences between payout totals and their associated payout lines.
+
+Ground-truth labels are generated to represent the expected exception outcomes.
+
+10. Data Validation
+The generator includes validation checks for:
+
+Primary key uniqueness.
+
+Foreign key relationships.
+
+Required field checks.
+
+Valid status and enum values.
+
+Date consistency.
+
+Business rule validation.
+
+Payout amount reconciliation.
+
+Data integrity and consistency.
+
+The validation process helps identify invalid records and inconsistencies in generated datasets.
+
+11. Installation and Requirements
+Python 3 is required to run this project.
+
+Install the required packages:
+
 pip install pandas pytest
-```
+12. Data Generation
+Run the following command from the project root directory.
 
-## 9. Data Generation
-
-Run the generator from the project root:
-
-Starter dataset:
-
-```bash
+Starter Dataset
 python src/generate_data.py --scale 0.01
-```
-
-Full-scale dataset:
-
-```bash
+Full-Scale Dataset
 python src/generate_data.py --scale 1.0
-```
+The generator supports configurable dataset scaling.
 
-The project uses a fixed random seed:
+Reproducibility
+The fixed random seed used by the project is:
 
-```text
 20261022
-```
+Using the same seed and configuration supports repeatable synthetic data generation.
 
-This supports reproducible synthetic data generation.
+13. Generated Data Outputs
+The generator produces multiple output formats.
 
-## 10. Automated Testing
+Raw Data
+CSV files containing generated business records.
 
-Run the automated tests:
+Processed Data
+JSON files containing processed entity records.
 
-```bash
+Ground Truth
+Ground-truth files containing expected exception labels.
+
+SQL Database
+SQLite database and SQL export files for relational data storage and querying.
+
+Metadata and Reports
+source_manifest.json
+
+validation_summary.json
+
+README_generated.md
+
+14. Automated Testing
+The project uses Pytest for automated testing.
+
+Install Pytest:
+
+pip install pytest
+Execute the test suite:
+
 python -m pytest tests/ -v
-```
+The tests cover basic data validation and known operational exception scenarios.
 
-The test suite checks data uniqueness, basic data validity, payout values, dispute statuses, and exception scenarios.
+15. Validation Results
+The starter dataset generation completed successfully.
 
-## 11. Generated Outputs
+========== GENERATION COMPLETE ==========
 
-The project generates:
-
-- Raw CSV files
-- Processed JSON files
-- Ground-truth exception data
-- SQLite database and SQL exports
-- Source manifest
-- Validation summary
-
-## 12. Validation Status
-
-The starter dataset completed successfully with:
-
-```text
 Validation: PASS
 Seed: 20261022
 Scale: 0.01
-```
 
-Full-scale generation and reproducibility checks are pending final verification.
+Row Counts:
+seller: 20
+product_listing: 200
+commission_rule: 5
+order: 1000
+order_line: 2492
+fulfillment: 2492
+customer_review: 767
+dispute: 100
+payout: 12
+payout_line: 2447
+event_history: 5081
+seller_metrics: 20
+exception_cases: 5
+The starter dataset passed the generator validation checks.
 
-## 13. Documentation
+Full-scale generation and reproducibility checks require final verification.
+
+16. Documentation
+Additional project documentation is available in:
+
 docs/data_dictionary.md – Entity and field definitions.
-data/README_generated.md – Generated dataset details.
-data/source_manifest.json – Dataset provenance.
-data/validation_summary.json – Validation results.
 
-14. Project Objective
-This project demonstrates practical skills in:
+data/README_generated.md – Generated dataset information.
 
-Python programming
+data/source_manifest.json – Dataset source and configuration information.
 
-Data engineering fundamentals
+data/validation_summary.json – Data validation summary.
 
-Relational database design
+17. Reproducibility
+The project uses a fixed random seed and configurable scale parameter to support reproducible synthetic datasets.
 
-SQL and SQLite
+The generated outputs can be compared across runs to verify consistency.
 
-Synthetic data generation
+18. Future Enhancements
+Expand full-scale data generation and performance optimization.
 
-Data quality and validation
+Add more comprehensive automated validation tests.
 
-Business rule implementation
+Improve payout reconciliation reports.
 
-Exception and anomaly monitoring
+Add advanced seller performance analytics.
 
-Automated testing
+Develop interactive dashboards.
 
-Git and GitHub version control
+Integrate automated anomaly monitoring.
+
+Improve documentation and test coverage.
+
+19. Project Outcome
+This project demonstrates practical implementation of:
+
+Python programming.
+
+Data engineering workflows.
+
+Synthetic data generation.
+
+Relational database management.
+
+SQL and SQLite.
+
+Data validation and quality checks.
+
+Business rule implementation.
+
+Operational exception monitoring.
+
+Automated testing.
+
+Git and GitHub version control.
+
+20. Author
+Project: Seller Operations & Payout Monitoring System
+
+Category: Data Engineering
+
+Technologies: Python, SQL, SQLite, Pandas, Pytest, Git, and GitHub
