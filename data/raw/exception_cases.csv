@@ -1,6 +1,0 @@
-case_id,issue_type,ground_truth,expected_decision,affected_entity,affected_record_id
-EX-001,PAYOUT_BEFORE_DELIVERY_OR_HOLD_RELEASE,REJECT_PAYOUT,Do not pay until delivered and 7-day hold has elapsed,Fulfillment/PayoutLine,SYNTHETIC_FIXTURE
-EX-002,COMMISSION_APPLIED_TWICE,FLAG_DUPLICATE_COMMISSION,Apply one effective commission rule once per order line,PayoutLine,SYNTHETIC_FIXTURE
-EX-003,SUSPENDED_SELLER_CONTINUES_LISTING,SUSPEND_LISTING,Suspended seller must not have an active listing,Seller/ProductListing,NONE
-EX-004,DISPUTE_NOT_DEDUCTED,HOLD_OR_DEDUCT_DISPUTE,Open/lost disputes must be held or deducted according to policy,Dispute/PayoutLine,SYNTHETIC_FIXTURE
-EX-005,PAYOUT_TOTAL_NOT_EQUAL_TO_LINES,RECONCILE_PAYOUT,Payout header must equal sum of its payout lines,Payout,SYNTHETIC_FIXTURE
