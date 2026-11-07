@@ -1,62 +1,124 @@
+# Seller Operations & Payout Monitoring System
+
 ## 1. Project Overview
 
-The Seller Operations & Payout Monitoring System is a Python-based project designed to monitor seller performance and manage the order-to-payout workflow.
+The Seller Operations & Payout Monitoring System is a Python-based project designed to monitor seller performance and manage the complete order-to-payout workflow.
 
-It handles seller information, product listings, orders, fulfillment, customer reviews, disputes, commissions, and payouts. The system also identifies important exceptions and maintains records of relevant events.
+It covers seller management, product listings, order processing, fulfillment, customer reviews, disputes, commission calculations, and payout eligibility.
+
+The system generates synthetic business data, applies predefined business rules, validates transactions, and identifies important business exceptions.
 
 ## 2. Problem Statement
 
-Managing multiple sellers and their transactions can lead to issues such as delayed shipments, incorrect commission calculations, unresolved disputes, and incorrect payouts.
+Managing multiple sellers and their transactions can create operational challenges such as delayed shipments, incorrect commission calculations, unresolved disputes, and incorrect payouts.
 
-This project addresses these challenges by generating related business data, applying predefined business rules, validating transactions, and identifying exceptions.
+This project aims to address these challenges by generating realistic business data, applying business rules, monitoring seller activities, validating financial calculations, and identifying exceptions.
 
 ## 3. Project Objectives
 
 - Monitor seller service levels and performance.
-- Track orders and fulfillment activities.
+- Track orders, shipments, and deliveries.
 - Calculate commissions and payout eligibility.
-- Account for disputes, refunds, and reserve holds.
+- Manage disputes, refunds, and reserve holds.
 - Identify incorrect transactions and business exceptions.
 - Maintain event history for traceability.
-- Generate measurable validation results.
+- Generate validation reports and measurable outputs.
+- Support reproducible synthetic data generation.
 
-## 4. Business Workflow
+## 4. Primary Actors
 
-The system follows an end-to-end workflow:
+The system is designed around the following business actors:
 
-1. Create seller and product listing records.
-2. Generate customer orders across sellers.
-3. Create order lines and fulfillment records.
-4. Track shipment and delivery activities.
-5. Record customer reviews and disputes.
-6. Apply commission and reserve rules.
-7. Calculate eligible payout lines.
-8. Validate payout totals and identify exceptions.
-9. Generate ground-truth records and validation reports.
+- Customer
+- Store/Warehouse Operator
+- Merchandising/E-commerce Analyst
+- Operations Manager
 
-## 5. Key Entities
+## 5. Business Workflow
 
-The project includes the following business entities:
+The project follows an end-to-end business workflow:
 
-- Seller
-- ProductListing
-- Order
-- OrderLine
-- Fulfillment
-- CustomerReview
-- Dispute
-- CommissionRule
-- Payout
-- PayoutLine
-- EventHistory
-- SellerMetrics
-- ExceptionCases
+1. Generate seller and product listing master data.
+2. Generate customer orders across multiple sellers.
+3. Create order lines using valid product and order references.
+4. Split multi-seller orders into fulfillment records.
+5. Record shipment and delivery activities.
+6. Generate customer reviews and disputes.
+7. Apply commission and reserve rules.
+8. Calculate payout lines based on delivery and hold conditions.
+9. Validate payout calculations and transaction relationships.
+10. Generate exception records and ground-truth labels.
 
-Each entity has its own identifiers and related records to support data consistency and traceability.
+## 6. Key Business Entities
 
-## 6. Business Exception Scenarios
+The project includes the following entities:
 
-The project covers five important negative scenarios:
+| Entity | Description |
+|---|---|
+| Seller | Stores seller information and status |
+| ProductListing | Contains seller product listings |
+| Order | Stores customer order information |
+| OrderLine | Contains individual order items |
+| Fulfillment | Tracks shipment and delivery |
+| CustomerReview | Stores customer feedback |
+| Dispute | Tracks disputes and chargebacks |
+| CommissionRule | Defines commission percentages and rules |
+| Payout | Stores seller payout information |
+| PayoutLine | Contains individual payout calculations |
+| EventHistory | Maintains business event history |
+| SellerMetrics | Stores calculated seller performance metrics |
+| ExceptionCases | Stores identified business exceptions |
+
+## 7. ID and Naming Conventions
+
+The generator uses consistent, deterministic identifiers.
+
+Examples:
+
+- Seller: `SELL-000001`
+- Product Listing: `LIST-<seller-id>-000001`
+- Order: `ORD-2026-000001`
+- Fulfillment: `FUL-<order-line-id>`
+- Dispute: `DSP-2026-000001`
+- Payout: `PAYOUT-2026-000001`
+
+Identifiers are generated consistently to maintain relationships between records.
+
+## 8. Synthetic Data Generation
+
+The project uses a Python-based synthetic data generator with a fixed random seed and configurable scale.
+
+**Full-scale dataset:**
+
+| Dataset | Records |
+|---|---:|
+| Seller | 2,000 |
+| Product Listing | 20,000 |
+| Commission Rule | 5 |
+| Order | 100,000 |
+| Order Line | 250,217 |
+| Fulfillment | 250,217 |
+| Customer Review | 74,828 |
+| Dispute | 10,000 |
+| Payout | 1,327 |
+| Payout Line | 246,154 |
+| Event History | 510,115 |
+| Seller Metrics | 2,000 |
+| Exception Cases | 5 |
+
+**Generation settings:**
+
+- Random Seed: `20261022`
+- Scale: `1.0`
+- Validation Status: PASS
+
+The same generator supports both smaller test datasets and full-scale datasets.
+
+## 9. Business Rules and Exception Scenarios
+
+The project includes business rules related to seller status, order fulfillment, commissions, disputes, reserve holds, and payout eligibility.
+
+The following five exception scenarios are covered:
 
 1. Payout generated before delivery or hold release.
 2. Commission applied more than once.
@@ -64,57 +126,162 @@ The project covers five important negative scenarios:
 4. Dispute amount not deducted from payout.
 5. Payout total does not match the sum of payout lines.
 
-These scenarios are used to evaluate whether the system identifies incorrect business outcomes.
+These scenarios help evaluate whether incorrect business outcomes can be identified.
 
-## 7. Synthetic Dataset
+## 10. Data Validation
 
-The generator supports configurable dataset sizes using a fixed random seed.
+The project performs validation checks to maintain data quality and consistency.
 
-Full-scale dataset:
+Validation includes:
 
-- Sellers: 2,000
-- Product Listings: 20,000
-- Orders: 100,000
-- Disputes: 10,000
+- Primary key uniqueness.
+- Foreign key integrity.
+- Allowed status and enum values.
+- Date ordering and consistency.
+- Financial calculation checks.
+- Duplicate record detection.
+- Lifecycle and business rule checks.
+- Exception identification.
 
-The generated dataset also includes related order lines, fulfillment records, reviews, payouts, event history, seller metrics, and exception cases.
+**Full-scale validation result: PASS**
 
-## 8. Validation and Quality Checks
+No validation errors were reported in the completed full-scale run.
 
-The project performs validation checks to ensure:
+## 11. Ground Truth
 
-- Primary keys are unique.
-- Foreign key relationships are valid.
-- Business status values follow allowed rules.
-- Dates follow the expected order.
-- Financial calculations are consistent.
-- Duplicate records and business exceptions are identified.
-- Generated outcomes follow documented rules.
+Separate ground-truth files are generated in CSV and JSON formats.
 
-## 9. Ground Truth and Reproducibility
+They contain known exception scenarios and expected labels based on documented business rules.
 
-Separate ground-truth CSV and JSON files are generated to identify known exception scenarios and expected outcomes.
+Ground-truth records are maintained separately from the generated input datasets.
 
-The generator uses seed `20261022` to support reproducible results. Two full-scale runs were compared across 37 files, and all 37 files matched.
+## 12. Reproducibility
 
-## 10. Data Provenance
+The generator uses a fixed seed (`20261022`) to produce reproducible results.
 
-This project uses synthetic data generated specifically for testing and demonstration. No real customer or seller personal information is required.
+Two full-scale runs were compared using SHA-256 checksums.
 
-## 11. Project Execution
+| Check | Result |
+|---|---:|
+| Files Compared | 37 |
+| Identical Files | 37 |
+| Different Files | 0 |
+| Missing Files | 0 |
+| New Files | 0 |
 
-Generate the full dataset:
+**Reproducibility Status: PASS**
+
+## 13. Test Execution Results
+
+The project was tested using Python and Pytest.
+
+**Test Environment:**
+- Python: 3.13.18
+- Pytest: 8.4.2
+
+| Test Case | Result |
+|---|---|
+| Payout Before Delivery | PASS |
+| Duplicate Commission | PASS |
+| Suspended Seller Listing | PASS |
+| Missing Dispute Deduction | PASS |
+| Payout Total Mismatch | PASS |
+| Seller Validation | PASS |
+| Order Validation | PASS |
+| Order Line Validation | PASS |
+| Payout Validation | PASS |
+| Dispute Validation | PASS |
+
+**Test Summary:**
+- Total Tests: 10
+- Passed: 10
+- Failed: 0
+- Execution Time: 1.75 seconds
+
+See [Test Execution Report](test-results/test_execution_report.md) for the detailed results.
+
+## 14. Project Structure
+
+```text
+Seller-Operations-Payout-Monitoring/
+│
+├── data/
+│   ├── raw/
+│   ├── processed/
+│   ├── ground_truth/
+│   ├── source_manifest.json
+│   └── validation_summary.json
+│
+├── src/
+│   └── generate_data.py
+│
+├── tests/
+│   ├── test_validation.py
+│   └── test_exceptions.py
+│
+├── docs/
+│
+├── test-results/
+│   └── test_execution_report.md
+│
+└── README.md
+```
+
+Some large generated datasets and SQL exports may not be committed because of GitHub file-size limitations. They can be recreated using the generator.
+
+## 15. Technologies Used
+
+- Python
+- Pandas
+- SQLite
+- CSV
+- JSON
+- SQL
+- Pytest
+- Git
+- GitHub
+- SHA-256
+
+## 16. How to Run the Project
+
+**Step 1: Clone the repository**
+
+```bash
+git clone https://github.com/mummy003/Seller-Operations-Payout-Monitoring.git
+```
+
+**Step 2: Open the project directory**
+
+```bash
+cd Seller-Operations-Payout-Monitoring
+```
+
+**Step 3: Install dependencies**
+
+```bash
+pip install pandas pytest
+```
+
+**Step 4: Generate the full-scale dataset**
 
 ```bash
 python src/generate_data.py --scale 1.0
 ```
 
-Run automated tests:
+**Step 5: Run automated tests**
 
 ```bash
 python -m pytest tests/ -v
 ```
 
-## 12. Project Outcome
+## 17. Data Provenance
 
-The project successfully generated the full-scale dataset, completed validation without errors, passed all 10 automated tests, and produced matching results across two reproducibility runs.
+This project uses synthetic data generated specifically for development, testing, and demonstration.
+
+No real customer or seller personal information is required. The generated records are intended to simulate business transactions and operational scenarios.
+
+## 18. Project Outcome
+
+The project successfully generated the full-scale synthetic dataset, completed data validation, covered five required exception scenarios, passed all 10 automated tests, and demonstrated reproducibility across two full-scale runs.
+
+It provides a foundation for monitoring seller operations, validating payout calculations, and identifying business exceptions.
