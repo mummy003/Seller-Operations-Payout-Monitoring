@@ -1,0 +1,6 @@
+case_id,issue_type,ground_truth,expected_decision,affected_entity
+EX-001,PAYOUT_BEFORE_DELIVERY_OR_HOLD_RELEASE,REJECT_PAYOUT,Do not pay before delivery and 7-day hold release,Fulfillment/PayoutLine
+EX-002,COMMISSION_APPLIED_TWICE,FLAG_DUPLICATE_COMMISSION,Apply commission only once per order line,PayoutLine
+EX-003,SUSPENDED_SELLER_CONTINUES_LISTING,BLOCK_LISTING,Suspended sellers must not publish active listings,Seller/ProductListing
+EX-004,DISPUTE_NOT_DEDUCTED,FLAG_MISSING_DEDUCTION,Deduct resolved lost disputes and hold open disputes,Dispute/PayoutLine
+EX-005,PAYOUT_TOTAL_NOT_EQUAL_TO_LINES,FLAG_RECONCILIATION_MISMATCH,Payout total must equal the sum of payout lines,Payout/PayoutLine
