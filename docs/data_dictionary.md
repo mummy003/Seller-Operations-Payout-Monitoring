@@ -1,179 +1,400 @@
-# Seller Operations Payout Monitoring
+# Seller Operations & Payout Monitoring
+## Data Dictionary
 
-## 1. Project Overview
-This data dictionary defines the entities, attributes, data types, constraints, relationships, and validation rules used in the Seller Operations Payout Monitoring System.
+### 1. Project Overview
 
-## 2. Seller
+This document describes the entities, attributes, relationships, identifiers, and validation rules used in the Seller Operations & Payout Monitoring project.
 
-| Field | Data Type | Required | Validation |
-|---|---|---|---|
-| seller_id (PK) | VARCHAR(15) | Yes | Unique, format SELL-000001 |
-| seller_name | VARCHAR(100) | Yes | Non-empty |
-| email | VARCHAR(150) | Yes | Valid email, unique |
-| phone | VARCHAR(15) | No | Valid phone format |
-| registration_date | DATE | Yes | Valid date |
-| seller_status | VARCHAR(20) | Yes | ACTIVE, SUSPENDED, INACTIVE |
-| service_score | DECIMAL(5,2) | No | Range 0–100 |
-| created_at | TIMESTAMP | Yes | Valid timestamp |
+The project uses synthetic data to monitor seller performance, product listings, orders, fulfillment, customer reviews, disputes, commissions, and payouts.
 
-## 3. ProductListing
+- Data type: Synthetic
+- Random seed: 20261022
+- Currency: INR
+- Primary keys uniquely identify records.
+- Foreign keys connect related entities.
+- Ground-truth labels are maintained separately from operational data.
 
-| Field | Data Type | Required | Validation |
-|---|---|---|---|
-| listing_id (PK) | VARCHAR(30) | Yes | Unique, LIST-SELL-000001 |
-| seller_id (FK) | VARCHAR(15) | Yes | Must exist in Seller |
-| product_name | VARCHAR(150) | Yes | Non-empty |
-| category | VARCHAR(50) | Yes | Valid category |
-| price | DECIMAL(12,2) | Yes | Greater than 0, currency INR |
-| stock_quantity | INT | Yes | Minimum 0, unit: pieces |
-| listing_status | VARCHAR(20) | Yes | ACTIVE, INACTIVE, SUSPENDED |
-| created_at | TIMESTAMP | Yes | Valid timestamp |
+---
 
-## 4. Order
+### 2. Seller
 
-| Field | Data Type | Required | Validation |
-|---|---|---|---|
-| order_id (PK) | VARCHAR(20) | Yes | Unique, ORD-2026-000001 |
-| customer_id | VARCHAR(20) | Yes | Valid synthetic customer ID |
-| order_date | TIMESTAMP | Yes | Valid timestamp |
-| order_status | VARCHAR(20) | Yes | PLACED, CONFIRMED, SHIPPED, DELIVERED, CANCELLED, RETURNED |
-| total_amount | DECIMAL(12,2) | Yes | Must equal order line totals |
-| currency | CHAR(3) | Yes | INR |
-| created_at | TIMESTAMP | Yes | Valid timestamp |
+**Description:** Stores seller registration and operational information.
 
-## 5. OrderLine
+| Column | Description | Key |
+|---|---|---|
+| seller_id | Unique seller identifier (SELL-000001) | PK |
+| seller_name | Seller name | |
+| seller_status | Seller status: ACTIVE, SUSPENDED, INACTIVE | |
+| country | Seller country | |
+| created_date | Seller creation date | |
+| service_level_target_pct | Required service-level target percentage | |
 
-| Field | Data Type | Required | Validation |
-|---|---|---|---|
-| order_line_id (PK) | VARCHAR(30) | Yes | Unique and immutable |
-| order_id (FK) | VARCHAR(20) | Yes | Must exist in Order |
-| listing_id (FK) | VARCHAR(30) | Yes | Must exist in ProductListing |
-| seller_id (FK) | VARCHAR(15) | Yes | Must match listing owner |
-| quantity | INT | Yes | Greater than 0 |
-| unit_price | DECIMAL(12,2) | Yes | Greater than 0 |
-| line_total | DECIMAL(12,2) | Yes | quantity × unit_price |
+**Rules:**
+- seller_id must be unique.
+- seller_status must contain an allowed value.
+- Service-level target must be between 0 and 100.
 
-## 6. Fulfillment
+---
 
-| Field | Data Type | Required | Validation |
-|---|---|---|---|
-| fulfillment_id (PK) | VARCHAR(40) | Yes | FUL- followed by order_line_id |
-| order_line_id (FK) | VARCHAR(30) | Yes | Must exist in OrderLine |
-| seller_id (FK) | VARCHAR(15) | Yes | Must exist in Seller |
-| shipment_date | TIMESTAMP | No | Cannot precede order date |
-| delivery_date | TIMESTAMP | No | Cannot precede shipment date |
-| fulfillment_status | VARCHAR(20) | Yes | PENDING, PACKED, SHIPPED, DELIVERED, RETURNED, CANCELLED |
-| tracking_number | VARCHAR(50) | No | Unique when present |
+### 3. ProductListing
 
-## 7. CustomerReview
+**Description:** Stores products listed by sellers.
 
-| Field | Data Type | Required | Validation |
-|---|---|---|---|
-| review_id (PK) | VARCHAR(25) | Yes | Unique |
-| order_line_id (FK) | VARCHAR(30) | Yes | Must exist in OrderLine |
-| seller_id (FK) | VARCHAR(15) | Yes | Must exist in Seller |
-| rating | INT | Yes | Range 1–5 |
-| review_text | VARCHAR(500) | No | Maximum 500 characters |
-| review_date | TIMESTAMP | Yes | After order date |
- 
-## 8. Dispute
+| Column | Description | Key |
+|---|---|---|
+| listing_id | Unique listing identifier | PK |
+| seller_id | Seller who owns the listing | FK |
+| product_name | Product name | |
+| category | Product category | |
+| unit_price | Price per product in INR | |
+| listing_status | ACTIVE or INACTIVE | |
+| created_date | Listing creation date | |
 
-| Field | Data Type | Required | Validation |
-|---|---|---|---|
-| dispute_id (PK) | VARCHAR(20) | Yes | DSP-2026-000001 |
-| order_id (FK) | VARCHAR(20) | Yes | Must exist in Order |
-| seller_id (FK) | VARCHAR(15) | Yes | Must exist in Seller |
-| dispute_type | VARCHAR(30) | Yes | REFUND, CHARGEBACK, PRODUCT_ISSUE, DELIVERY_ISSUE |
-| dispute_amount | DECIMAL(12,2) | Yes | Greater than 0 |
-| dispute_status | VARCHAR(20) | Yes | OPEN, UNDER_REVIEW, RESOLVED, REJECTED |
-| resolution_date | DATE | No | Cannot precede dispute date |
-| created_at | TIMESTAMP | Yes | Valid timestamp |
+**Rules:**
+- Every listing must reference an existing seller.
+- Unit price must be greater than zero.
+- A suspended seller must not create an active listing.
 
-## 9. CommissionRule
+---
 
-| Field | Data Type | Required | Validation |
-|---|---|---|---|
-| commission_rule_id (PK) | VARCHAR(20) | Yes | Unique |
-| seller_id (FK) | VARCHAR(15) | No | Null means general rule |
-| category | VARCHAR(50) | Yes | Valid product category |
-| commission_rate | DECIMAL(5,2) | Yes | Range 0–100, percentage |
-| reserve_rate | DECIMAL(5,2) | Yes | Range 0–100, percentage |
-| hold_days | INT | Yes | Minimum 0, unit: days |
-| effective_from | DATE | Yes | Valid date |
-| effective_to | DATE | No | Must be after effective_from |
-| rule_status | VARCHAR(20) | Yes | ACTIVE, INACTIVE |
+### 4. Order
 
-## 10. Payout
+**Description:** Stores customer order information.
 
-| Field | Data Type | Required | Validation |
-|---|---|---|---|
-| payout_id (PK) | VARCHAR(25) | Yes | PAYOUT-2026-000001 |
-| seller_id (FK) | VARCHAR(15) | Yes | Must exist in Seller |
-| payout_date | DATE | Yes | Valid date |
-| gross_amount | DECIMAL(12,2) | Yes | Minimum 0 |
-| commission_amount | DECIMAL(12,2) | Yes | Minimum 0 |
-| refund_amount | DECIMAL(12,2) | Yes | Minimum 0 |
-| dispute_amount | DECIMAL(12,2) | Yes | Minimum 0 |
-| reserve_amount | DECIMAL(12,2) | Yes | Minimum 0 |
-| net_amount | DECIMAL(12,2) | Yes | Calculated from payout components |
-| payout_status | VARCHAR(20) | Yes | PENDING, APPROVED, PAID, ON_HOLD, FAILED |
+| Column | Description | Key |
+|---|---|---|
+| order_id | Unique order identifier (ORD-2026-000001) | PK |
+| customer_id | Customer identifier | |
+| order_date | Date the order was placed | |
+| order_status | CANCELLED, FULFILLED, IN_PROGRESS | |
+| order_total | Total order amount in INR | |
+| currency | Transaction currency (INR) | |
 
-## 11. PayoutLine
+**Rules:**
+- order_id must be unique.
+- order_total must not be negative.
+- An order may contain multiple order lines.
 
-| Field | Data Type | Required | Validation |
-|---|---|---|---|
-| payout_line_id (PK) | VARCHAR(30) | Yes | Unique |
-| payout_id (FK) | VARCHAR(25) | Yes | Must exist in Payout |
-| order_line_id (FK) | VARCHAR(30) | Yes | Must exist in OrderLine |
-| gross_amount | DECIMAL(12,2) | Yes | Minimum 0 |
-| commission_amount | DECIMAL(12,2) | Yes | Minimum 0 |
-| refund_amount | DECIMAL(12,2) | Yes | Minimum 0 |
-| dispute_amount | DECIMAL(12,2) | Yes | Minimum 0 |
-| reserve_amount | DECIMAL(12,2) | Yes | Minimum 0 |
-| net_amount | DECIMAL(12,2) | Yes | Calculated from line components |
+---
 
-## 12. Entity Relationships and Cardinality
+### 5. OrderLine
 
-1. Seller → ProductListing: One-to-Many (1:N).
-2. Order → OrderLine: One-to-Many (1:N).
-3. ProductListing → OrderLine: One-to-Many (1:N).
-4. Seller → OrderLine: One-to-Many (1:N).
-5. OrderLine → Fulfillment: One-to-One (1:1) in the baseline design.
-6. OrderLine → CustomerReview: One-to-Zero-or-One (1:0..1).
-7. Order → Dispute: One-to-Many (1:N).
-8. Seller → Dispute: One-to-Many (1:N).
-9. Seller → Payout: One-to-Many (1:N).
-10. Payout → PayoutLine: One-to-Many (1:N).
-11. OrderLine → PayoutLine: One-to-Many (1:N) when partial payouts are allowed.
-12. CommissionRule → Seller: Optional seller-specific rule; general rules may apply to multiple sellers.
+**Description:** Connects orders, products, and sellers. It supports orders containing products from multiple sellers.
 
-An Order can contain products from multiple sellers. OrderLine acts as the bridge between Order, ProductListing, and Seller.
+| Column | Description | Key |
+|---|---|---|
+| order_line_id | Unique order-line identifier | PK |
+| order_id | Related order identifier | FK |
+| listing_id | Related product listing identifier | FK |
+| seller_id | Seller responsible for the order line | FK |
+| quantity | Number of units ordered | |
+| unit_price | Price per unit in INR | |
+| line_total | quantity × unit_price | |
 
-## 13. Common Data Validation Rules
+**Rules:**
+- Every order line must reference an existing order, listing, and seller.
+- Quantity must be greater than zero.
+- line_total must equal quantity multiplied by unit_price.
+- An order can contain multiple order lines.
 
-- All primary keys must be unique and non-null.
-- All foreign keys must reference existing parent records.
-- Dates must follow valid chronological order.
-- Monetary values must use INR and DECIMAL precision.
-- Quantities must be positive integers.
-- Commission and reserve rates must be between 0 and 100.
-- Suspended sellers must not create new active listings.
-- Payouts must only include eligible delivered order lines after applicable hold periods.
-- Commission must not be applied more than once to the same eligible transaction.
-- Payout totals must reconcile with their payout lines.
-- Disputes and refunds must be deducted according to documented rules.
-- Historical status changes must be retained as separate events rather than overwriting history.
+---
 
-## 14. Synthetic Data and Reproducibility
+### 6. Fulfillment
 
-- Use synthetic data only for the baseline dataset.
-- Use fixed random seed: 20261022.
-- Keep entity IDs immutable and consistently referenced.
-- Generate valid baseline records before injecting anomalies.
-- Store anomaly labels separately in ground_truth.
-- Validate primary keys, foreign keys, arithmetic, lifecycle transitions, and duplicate records.
-- Regenerate datasets using the same seed and compare row counts and checksums.
+**Description:** Tracks the shipment and delivery status of each order line.
 
-**Document Status:** Initial Data Dictionary Specification  
-**Project:** Seller Operations Payout Monitoring  
-**Technology:** Python, SQL, CSV and JSON
+| Column | Description | Key |
+|---|---|---|
+| fulfillment_id | Unique fulfillment identifier (FUL- + order_line_id) | PK |
+| order_line_id | Related order line | FK |
+| seller_id | Seller responsible for fulfillment | FK |
+| fulfillment_status | CREATED, SHIPPED, DELIVERED, RETURNED | |
+| created_date | Fulfillment creation date | |
+| shipped_date | Shipment date | |
+| delivered_date | Delivery date | |
+| is_late | Indicates whether fulfillment was late | |
+| is_returned | Indicates whether the item was returned | |
+
+**Rules:**
+- Every fulfillment must reference a valid order line and seller.
+- Fulfillment dates must follow a valid chronological order.
+- A delivered fulfillment must have a delivery date.
+- Late and returned indicators must be Boolean values.
+
+---
+
+### 7. CustomerReview
+
+**Description:** Stores customer feedback for delivered order lines.
+
+| Column | Description | Key |
+|---|---|---|
+| review_id | Unique review identifier | PK |
+| order_line_id | Related order line | FK |
+| seller_id | Seller being reviewed | FK |
+| rating | Customer rating | |
+| review_date | Date of review | |
+| review_text | Customer feedback text | |
+
+**Rules:**
+- Every review must reference a valid order line and seller.
+- Rating must be between 1 and 5.
+- Review date must not be earlier than the order date.
+
+---
+
+### 8. Dispute
+
+**Description:** Stores customer disputes and chargeback-related records.
+
+| Column | Description | Key |
+|---|---|---|
+| dispute_id | Unique dispute identifier (DSP-2026-000001) | PK |
+| order_line_id | Related order line | FK |
+| seller_id | Seller involved in the dispute | FK |
+| dispute_type | CHARGEBACK, ITEM_NOT_RECEIVED, NOT_AS_DESCRIBED | |
+| dispute_status | OPEN, WON, LOST | |
+| dispute_amount | Disputed amount in INR | |
+| created_date | Date the dispute was created | |
+| resolved_date | Date the dispute was resolved | |
+
+**Rules:**
+- Every dispute must reference an existing order line and seller.
+- Dispute amount must be greater than zero.
+- A resolved dispute must have a resolution date.
+- Open disputes may cause payout holds.
+
+---
+
+### 9. CommissionRule
+
+**Description:** Defines commission and reserve percentages for product categories.
+
+| Column | Description | Key |
+|---|---|---|
+| commission_rule_id | Unique commission rule identifier | PK |
+| category | Product category | |
+| commission_rate_pct | Commission percentage | |
+| reserve_rate_pct | Reserve percentage | |
+| effective_from | Rule start date | |
+| effective_to | Rule end date | |
+| is_active | Indicates whether the rule is active | |
+
+**Rules:**
+- Commission and reserve percentages must be between 0 and 100.
+- Effective end date must not be earlier than effective start date.
+- The applicable rule must be selected using the product category and effective dates.
+- Commission must not be applied more than once to the same payout line.
+
+---
+
+### 10. Payout
+
+**Description:** Stores seller payout summary information.
+
+| Column | Description | Key |
+|---|---|---|
+| payout_id | Unique payout identifier (PAYOUT-2026-000001) | PK |
+| seller_id | Seller receiving the payout | FK |
+| payout_date | Payout processing date | |
+| payout_status | ELIGIBLE | |
+| payout_total | Total payout amount in INR | |
+| currency | Payout currency (INR) | |
+
+**Rules:**
+- Every payout must reference an existing seller.
+- Payout total must match the sum of its payout lines.
+- Only eligible delivered order lines should be considered for payout.
+- Payouts must respect the configured hold period.
+- Returned orders and applicable disputes must be considered before payout eligibility.
+
+---
+
+### 11. PayoutLine
+
+**Description:** Stores the payout calculation for individual order lines.
+
+| Column | Description | Key |
+|---|---|---|
+| payout_line_id | Unique payout-line identifier | PK |
+| payout_id | Related payout identifier | FK |
+| order_line_id | Related order line | FK |
+| gross_amount | Original order-line amount in INR | |
+| commission_amount | Commission deducted in INR | |
+| reserve_amount | Reserve amount held in INR | |
+| refund_amount | Refund amount in INR | |
+| net_amount | Final payout amount in INR | |
+
+**Calculation:**
+
+net_amount = gross_amount - commission_amount - reserve_amount - refund_amount
+
+**Rules:**
+- Every payout line must reference an existing payout and order line.
+- Amounts must not be negative.
+- Commission must not be deducted twice.
+- Payout totals must reconcile with payout-line totals.
+
+---
+
+### 12. EventHistory
+
+**Description:** Maintains an audit trail of operational state changes.
+
+| Column | Description | Key |
+|---|---|---|
+| event_id | Unique event identifier | PK |
+| entity_type | Type of entity affected | |
+| entity_id | Identifier of the affected record | |
+| event_type | Event or action performed | |
+| event_date | Date and time of the event | |
+| from_state | Previous state | |
+| to_state | New state | |
+
+**Rules:**
+- Each event must have a unique event_id.
+- Events should preserve state-change history.
+- Previous records must not be silently overwritten.
+- Event dates must follow a valid sequence.
+
+---
+
+### 13. SellerMetrics
+
+**Description:** Stores calculated seller performance metrics.
+
+| Column | Description |
+|---|---|
+| seller_id | Seller identifier |
+| delivered_fulfillment_count | Number of delivered fulfillments |
+| late_fulfillment_count | Number of late fulfillments |
+| on_time_rate_pct | On-time fulfillment percentage |
+| average_review_rating | Average customer rating |
+| seller_status | Current seller status |
+| meets_service_target | Indicates whether seller meets the service target |
+
+**Rules:**
+- Metrics must be calculated from source records.
+- Counts must not be negative.
+- On-time rate must be between 0 and 100.
+- Seller metrics must be traceable to fulfillment and review records.
+
+---
+
+### 14. ExceptionCases
+
+**Description:** Stores documented business exception scenarios and their ground-truth labels.
+
+| Column | Description |
+|---|---|
+| case_id | Unique exception case identifier |
+| issue_type | Type of business exception |
+| ground_truth | Expected anomaly label |
+| expected_decision | Expected business decision |
+| affected_entity | Entity affected by the exception |
+| affected_record_id | Identifier of the affected record |
+
+**Supported exception scenarios:**
+1. Payout attempted before delivery or hold-period release.
+2. Commission applied more than once.
+3. Suspended seller continues creating active listings.
+4. Applicable dispute amount is not deducted.
+5. Payout total does not match payout-line totals.
+
+**Rules:**
+- Every exception must have a documented issue type.
+- Ground-truth labels must be derived from defined business rules.
+- Ground-truth information must be kept separate from model input features.
+
+---
+
+### 15. Entity Relationships
+
+| Parent Entity | Child Entity | Relationship |
+|---|---|---|
+| Seller | ProductListing | One-to-Many |
+| Seller | OrderLine | One-to-Many |
+| Seller | Fulfillment | One-to-Many |
+| Seller | CustomerReview | One-to-Many |
+| Seller | Dispute | One-to-Many |
+| Seller | Payout | One-to-Many |
+| Order | OrderLine | One-to-Many |
+| ProductListing | OrderLine | One-to-Many |
+| OrderLine | Fulfillment | One-to-One |
+| OrderLine | CustomerReview | One-to-Zero-or-One |
+| OrderLine | Dispute | One-to-Many |
+| Payout | PayoutLine | One-to-Many |
+| OrderLine | PayoutLine | One-to-Many |
+
+**Many-to-Many relationship:**
+
+Order and ProductListing have a many-to-many relationship resolved through OrderLine.
+
+An order may contain multiple products, and a product listing may appear in multiple orders.
+
+---
+
+### 16. Primary and Foreign Key Rules
+
+- Primary keys must uniquely identify each record.
+- Primary keys must not be null.
+- Foreign keys must reference existing parent records.
+- Duplicate primary-key values are not allowed.
+- Relationships must be validated before generating dependent records.
+
+---
+
+### 17. Business Validation Rules
+
+1. Suspended sellers must not have new active listings.
+2. Every order line must reference a valid order, listing, and seller.
+3. Fulfillment records must reference valid order lines.
+4. Delivery dates must not precede shipment dates.
+5. Customer ratings must be between 1 and 5.
+6. Commission and reserve rates must be between 0 and 100.
+7. Commission must not be deducted more than once.
+8. Payout eligibility must depend on delivery and the configured hold period.
+9. Returned orders and applicable disputes must be considered in payout calculations.
+10. Payout totals must reconcile with payout-line totals.
+11. All state changes must be traceable through event history.
+12. Exception cases must have documented ground-truth labels.
+
+---
+
+### 18. Data Generation and Reproducibility
+
+- All project data is synthetically generated.
+- Random seed: 20261022.
+- The generator supports configurable scale.
+- Starter and full-scale datasets use the same generation logic.
+- Master records are generated before dependent transaction records.
+- Dependent records use valid parent identifiers.
+- Business exceptions are documented separately.
+- Validation results are exported in validation_summary.json.
+- Source information is documented in source_manifest.json.
+- Generated data is available in CSV, JSON, and SQL formats.
+
+---
+
+### 19. Expected Validation Checks
+
+| Validation | Expected Result |
+|---|---|
+| Primary key uniqueness | PASS |
+| Foreign key integrity | PASS |
+| Allowed status values | PASS |
+| Date ordering | PASS |
+| Positive quantity and price | PASS |
+| Commission and reserve range | PASS |
+| Payout arithmetic | PASS |
+| Payout reconciliation | PASS |
+| Duplicate commission detection | PASS |
+| Exception ground-truth availability | PASS |
+| Reproducibility with fixed seed | PASS |
+
+---
+
+**Document Status:** Corrected Data Dictionary Specification  
+**Project:** Seller Operations & Payout Monitoring  
+**Data Type:** Synthetic  
+**Random Seed:** 20261022
